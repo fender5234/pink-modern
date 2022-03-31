@@ -1,0 +1,148 @@
+{% extends "_layout.njk" %}
+
+{% set title = 'Главная' %}
+
+{% block main %}
+  <header class="promo page-main__promo">
+    <h1 class="visually-hidden">Pink</h1>
+
+    <b class="promo__lead">Взгляните на жизнь иначе!</b>
+
+    <a class="promo__button" href="#!">Скачать приложение</a>
+
+    <ul class="app-links promo__applinks">
+      <li class="app-links__item">
+        <a class="app-links__link app-links__link--apple" href="#!">
+          <span class="visually-hidden">Apple</span>
+        </a>
+      </li>
+      <li class="app-links__item">
+        <a class="app-links__link app-links__link--android" href="#!">
+          <span class="visually-hidden">Android</span>
+        </a>
+      </li>
+      <li class="app-links__item">
+        <a class="app-links__link app-links__link--windows" href="#!">
+          <span class="visually-hidden">Windows</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="promo__description">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+  </header>
+
+  <section class="features page-main__features">
+    <h2 class="visually-hidden">Особенности</h2>
+
+    <b class="features__lead">Устали от серости мегаполиса?</b>
+    <b class="features__lead">Нам есть, что вам предложить!</b>
+
+    <dl class="features__list">
+      <dt class="features__item">Поднимает настроение</dt>
+      <dd class="features__description">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</dd>
+      <dt class="features__item">Меняет мир вокруг</dt>
+      <dd class="features__description">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</dd>
+      <dt class="features__item">Заводит новых друзей</dt>
+      <dd class="features__description">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</dd>
+    </dl>
+  </section>
+
+  <section class="reviews page-main__reviews">
+    <h2 class="visually-hidden">Отзывы</h2>
+
+    <ul class="reviews__list">
+      <li class="reviews__item">
+        <blockquote class="reviews__body">
+          <cite class="reviews__author">Николай Петров</cite>
+          <p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+        </blockquote>
+      </li>
+    </ul>
+  </section>
+
+  <section class="tariffs page-main__tariffs">
+    <h2 class="visually-hidden">Тарифы</h2>
+
+    <table class="tariffs__table">
+      <thead class="">
+        <tr class="tariffs__names">
+          <th class="visually-hidden">
+            Свойства
+          </th>
+          <th class="tariffs__name">
+            База
+            <p class="tariffs__price">1,99 USD</p>
+          </th>
+          <th class="hit tariffs__name">
+            Стандарт
+            <span class="hit__content">Хит</span>
+            <p class="tariffs__price">3,99 USD</p>
+          </th>
+          <th class="tariffs__name">
+            Анлим
+            <p class="tariffs__price">9,99 USD</p>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="tariffs__props">
+        <tr class="tariffs__details">
+          <th class="tariffs__detail">Розовый фильтр</th>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+        </tr>
+        <tr class="tariffs__details">
+          <th class="tariffs__detail">Смайлики</th>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--no">Нет</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+        </tr>
+        <tr class="tariffs__details">
+          <th class="tariffs__detail">Комментарии</th>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--no">Нет</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--no">Нет</p>
+          </td>
+          <td class="tariffs__detail">
+            <p class="tariffs__value tariffs__value--yes">Есть</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="contacts page-main__footer">
+    <p class="contacts__heading">Остались вопросы?</p>
+    <p class="contacts__heading">Свяжитесь с нами!</p>
+
+    <dl class="contacts__list">
+      <dt class="contacts__item">Звоните:</dt>
+      <dd class="contacts__description">
+        <a href="contacts__link" href="tel:+78125556666">+7 (812) 555-66-66</a>
+      </dd>
+      <dt class="contacts__item">Пишите:</dt>
+      <dd class="contacts__description">
+        <a href="contacts__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+      </dd>
+      <dt class="contacts__item">Приезжайте в гости:</dt>
+      <dd class="contacts__description">
+        <a href="contacts__link" href="#!">ул. Большая Конюшенная, 19/8</a>
+      </dd>
+    </dl>
+  </footer>
+{% endblock %}

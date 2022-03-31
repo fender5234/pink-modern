@@ -4,6 +4,16 @@
   "description": "Личный проект «Пинк» от HTML Academy",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
+    "browser-sync": "2.27.9",
+    "del": "6.0.0",
+    "gulp": "4.0.2",
+    "gulp-html-bem-validator": "1.0.5",
+    "gulp-lintspaces": "1.0.1",
+    "gulp-posthtml": "3.0.5",
+    "gulp-rename": "2.0.0",
+    "htmlnano": "2.0.0",
+    "nunjucks": "3.2.3",
+    "pineglade-w3c": "1.0.0",
     "stylelint": "13.13.1",
     "stylelint-config-htmlacademy": "^0.1.11"
   },
@@ -12,7 +22,7 @@
     "stylelint": "stylelint .",
     "lint": "npm run editorconfig",
     "build": "echo 'Build task'",
-    "start": "echo 'Start task'"
+    "start": "gulp"
   },
   "editorconfig-cli": [
     "*.json",

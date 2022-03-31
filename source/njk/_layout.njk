@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Пинк > {{ title }}</title>
+  </head>
+  <body class="page">
+    <header class="page-header page__header">
+      <a class="logo page-header__logo" href="index.html" {{ 'aria-current="page"' if page == 'index' }}>
+        <img class="logo__image" src="img/logo-pink.svg" alt="Логотип Pink">
+      </a>
+
+      <nav class="nav page-header__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link {{ 'nav__link--current' if page == 'index' }}" href="index.html" {{ 'aria-current="page"' if page == 'index' }}>
+              Главная
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#!">
+              Фотографии
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#!">
+              Конкурс
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#!">
+              HTML Academy
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main page__main">
+      {% block main %}{% endblock %}
+    </main>
+
+    <footer class="page-footer page__footer">
+      <a class="logo page-footer__logo" href="index.html" {{ 'aria-current="page"' if page == 'index' }}>
+        <img class="logo__image" src="img/logo-pink.svg" alt="Логотип Pink">
+      </a>
+
+      <ul class="socials page-footer__socials">
+        <li class="socials__item">
+          <a class="socials__link socials__link--vkontakte" href="#!">
+            <span class="visually-hidden">Vkontakte.</span>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--telegram" href="#!">
+            <span class="visually-hidden">Telegram.</span>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--youtube" href="#!">
+            <span class="visually-hidden">Youtube.</span>
+          </a>
+        </li>
+      </ul>
+
+      <a class="logo-dev page-footer__logo-dev" href="#!">
+        Разработано <img class="logo-dev__image" src="img/logo-academy.svg" alt="HTML Academy.">
+      </a>
+    </footer>
+  </body>
+</html>
