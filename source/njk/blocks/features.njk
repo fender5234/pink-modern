@@ -1,0 +1,14 @@
+<section class="features {{ mix }}">
+  <h2 class="visually-hidden">{{ data.features.heading }}.</h2>
+
+  {% for lead in data.features.leads %}
+    <b class="features__lead">{{ lead }}</b>
+  {% endfor %}
+
+  <dl class="features__list">
+    {% for item in data.features.list %}
+      <dt class="features__item">{{ item.title }}</dt>
+      <dd class="features__description">{{ item.description }}</dd>
+    {% endfor %}
+  </dl>
+</section>

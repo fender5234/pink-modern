@@ -1,0 +1,40 @@
+<section class="add {{ mix }}">
+  <h2 class="visually-hidden">{{ data.add.heading }}</h2>
+
+  <form class="add__form" action="{{ config.action }}" method="post">
+    <p class="add__file">
+      <label class="visually-hidden" for="add">{{ data.add.fileLabel }}</label>
+      <input
+        class="visually-hidden"
+        id="add"
+        name="image"
+        type="file"
+        accept="image/jpeg,image/png"
+        required
+      />
+    </p>
+
+    {% for filter in data.add.filters %}
+      <p class="add__filter">
+        <label class="visually-hidden" for="{{ filter.name }}">{{ filter.label }}</label>
+        <input
+          class="visually-hidden"
+          id="{{ filter.name }}"
+          name="{{ filter.name }}"
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value="{{ filter.value }}"
+        />
+      </p>
+    {% endfor %}
+
+    <button class="add__button" type="submit">
+      {{ data.add.submitTitle }}
+    </button>
+    <button class="add__button add__button--reset" type="reset">
+      {{ data.add.resetTitle }}
+    </button>
+  </form>
+</section>

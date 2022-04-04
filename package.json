@@ -5,6 +5,7 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "browser-sync": "2.27.9",
+    "cssnano": "5.1.7",
     "del": "6.0.0",
     "gulp": "4.0.2",
     "gulp-html-bem-validator": "1.0.5",
@@ -15,7 +16,8 @@
     "nunjucks": "3.2.3",
     "pineglade-w3c": "1.0.0",
     "stylelint": "13.13.1",
-    "stylelint-config-htmlacademy": "^0.1.11"
+    "stylelint-config-htmlacademy": "^0.1.11",
+    "terser": "5.12.1"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

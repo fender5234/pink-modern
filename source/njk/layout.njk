@@ -1,0 +1,23 @@
+{% import 'data/layout.njk' as config %}
+{% import 'data/' + page + '.njk' as data %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Пинк &gt; {{ data.title }}</title>
+  </head>
+  <body class="page">
+    {% set mix = 'page__header' %}
+    {% include 'blocks/page-header.njk' %}
+
+    <main class="page-main page__main">
+      {% block main %}{% endblock %}
+    </main>
+
+    {% set mix = 'page__footer' %}
+    {% include 'blocks/page-footer.njk' %}
+
+    {% block modal %}{% endblock %}
+  </body>
+</html>

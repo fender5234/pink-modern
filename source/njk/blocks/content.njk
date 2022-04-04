@@ -1,0 +1,14 @@
+<section class="content {{ mix }}">
+  <header class="content__header">
+    <h1 class="content__heading">{{ data.content.heading or data.title }}</h1>
+  </header>
+
+  <b class="content__lead">{{ data.content.prepend }}</b>
+
+  {% set mix = 'content__slot' %}
+  {% include 'blocks/' + slot + '.njk' %}
+
+  {% if data.content.append %}
+    <b class="content__lead">{{ data.content.append }}</b>
+  {% endif %}
+</section>

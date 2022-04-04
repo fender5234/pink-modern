@@ -1,0 +1,10 @@
+<ul class="reviews {{ mix }}">
+  {% for review in data.reviews.list %}
+    <li class="reviews__item">
+      <blockquote class="reviews__body">
+        <cite class="reviews__author">{{ review.author }}</cite>
+        <p class="reviews__text">{{ review.text }}</p>
+      </blockquote>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,7 @@
+<ul class="catalog {{ mix }}">
+  {% for photo in data.catalog %}
+    <li class="catalog__item">
+      {% include 'blocks/photo.njk' %}
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,17 @@
+<nav class="nav {{ mix }}">
+  <ul class="nav__list">
+    {% for link in config.menu %}
+      <li class="nav__item">
+        {% if link.page == page %}
+          <a class="nav__link nav__link--current" href="{{ link.href }}" aria-current="page">
+            {{ link.title }}
+          </a>
+        {% else %}
+          <a class="nav__link" href="{{ link.href }}">
+            {{ link.title }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,29 @@
+<article class="photo">
+  <h3 class="visually-hidden">{{ photo.image.alt }}</h3>
+
+  <figure>
+    {% set picture = {
+      mix: 'photo__picture',
+      src: photo.image.src,
+      alt: photo.image.alt
+    } %}
+    {% include 'blocks/picture.njk' %}
+
+    <figcaption class="photo__content">
+      <blockquote class="photo__quote">
+        <p class="photo__cite">
+          <cite class="photo__author">{{ photo.author }}</cite>
+          <time class="photo__time" datetime="{{ photo.created }}">{{ photo.time }}</time>
+        </p>
+        <p class="photo__description">{{ photo.description }}</p>
+      </blockquote>
+    </figcaption>
+  </figure>
+
+  <form class="photo__likes-form" action="{{ config.action }}" method="post">
+    <p class="photo__likes">{{ photo.likes }}</p>
+    <button class="photo__like-submit" type="submit" name="userId" value="{{ config.userId }}">
+      <span class="visually-hidden">Поставить лайк.</span>
+    </button>
+  </form>
+</article>

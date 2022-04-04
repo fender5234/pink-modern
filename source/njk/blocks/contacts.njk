@@ -1,0 +1,14 @@
+<footer class="contacts {{ mix }}">
+  {% for lead in data.contacts.leads %}
+    <p class="contacts__lead">{{ lead }}</p>
+  {% endfor %}
+
+  <dl class="contacts__list">
+    {% for link in data.contacts.list %}
+      <dt class="contacts__item">{{ link.title }}:</dt>
+      <dd class="contacts__description">
+        <a href="contacts__link" href="{{ link.href }}">{{ link.description }}</a>
+      </dd>
+    {% endfor %}
+  </dl>
+</footer>

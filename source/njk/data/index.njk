@@ -1,0 +1,116 @@
+{% set title = 'Главная' %}
+
+{% set promo = {
+  lead: 'Взгляните на жизнь иначе!',
+  downloadTItle: 'Скачать приложение',
+  description: 'Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8'
+} %}
+
+{% set features = {
+  heading: 'Особенности',
+  leads: [
+    'Устали от серости мегаполиса?',
+    'Нам есть, что вам предложить!'
+  ],
+  list: [
+    {
+      title: 'Поднимает настроение',
+      description: 'Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!'
+    },
+    {
+      title: 'Меняет мир вокруг',
+      description: 'Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект'
+    },
+    {
+      title: 'Заводит новых друзей',
+      description: 'Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых'
+    }
+  ]
+} %}
+
+{% set markets = [
+  {
+    title: 'Apple.',
+    href: 'https://www.apple.com/ru/app-store/',
+    icon: 'apple'
+  },
+  {
+    title: 'Android.',
+    href: 'https://play.google.com/',
+    icon: 'android'
+  },
+  {
+    title: 'Windows.',
+    href: 'https://www.microsoft.com/ru-ru/store/apps/windows',
+    icon: 'windows'
+  }
+] %}
+
+{% set reviews = {
+  heading: 'Отзывы',
+  list: [
+    {
+      author: 'Николай Петров',
+      text: '«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»'
+    },
+    {
+      author: 'Иван Николаев',
+      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur repellendus eos omnis neque corporis, odio dolorum at quo sed. Maiores blanditiis labore iste, doloremque eum ab? Ratione architecto quasi necessitatibus.'
+    },
+    {
+      author: 'Баба Нюра',
+      text: 'Aspernatur repellendus eos omnis neque corporis, odio dolorum at quo sed. Maiores blanditiis labore iste, doloremque eum ab? Ratione architecto quasi necessitatibus.'
+    }
+  ]
+} %}
+
+{% set tariffs = {
+  heading: 'Тарифы',
+  list: [
+    {
+      title: 'База',
+      price: '1,99',
+      filter: 'yes',
+      smiles: 'no',
+      comments: 'no'
+    },
+    {
+      title: 'Стандарт',
+      price: '3,99',
+      filter: 'yes',
+      smiles: 'yes',
+      comments: 'no'
+    },
+    {
+      title: 'Анлим',
+      price: '4,99',
+      filter: 'yes',
+      smiles: 'yes',
+      comments: 'yes'
+    }
+  ]
+} %}
+
+{% set contacts = {
+  leads: [
+    'Остались вопросы?',
+    'Свяжитесь с нами!'
+  ],
+  list: [
+    {
+      title: 'Звоните',
+      description: '+7 (812) 555-66-66',
+      href: 'tel:+78125556666'
+    },
+    {
+      title: 'Пишите',
+      description: 'mail@htmlacademy.ru',
+      href: 'mailto:mail@htmlacademy.ru'
+    },
+    {
+      title: 'Приезжайте в гости',
+      description: 'ул. Большая Конюшенная, 19/8',
+      href: '#!'
+    }
+  ]
+} %}

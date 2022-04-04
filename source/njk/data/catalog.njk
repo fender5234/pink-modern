@@ -1,0 +1,111 @@
+{% set title = 'Фотографии пользователей' %}
+
+{% set content = {
+  prepend: 'Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?',
+  append: 'Затмите их всех!<br>Выкладывайте все, что накопилось в телефоне!'
+} %}
+
+{% set catalog = [
+  {
+    panorama: 'Панорама дня',
+    created: '2017-12-01T00:00:00',
+    time: '5 минут назад',
+    image: {
+      src: 'img/catalog-1.jpg',
+      alt: 'Фото 1'
+    },
+    author: 'Анна',
+    description: 'Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!',
+    likes: 215
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '5 часов назад',
+    image: {
+      src: 'img/catalog-2.jpg',
+      alt: 'Фото 2'
+    },
+    author: 'Левон',
+    description: 'Вчера он на луну летал, сегодня в руки к нам попал.',
+    likes: 356
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '12 часов назад',
+    image: {
+      src: 'img/catalog-3.jpg',
+      alt: 'Фото 3'
+    },
+    author: 'Антон',
+    description: 'Соседи будут рады!',
+    likes: 666
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '20 часов назад',
+    image: {
+      src: 'img/catalog-4.jpg',
+      alt: 'Фото 4'
+    },
+    author: 'Борис',
+    description: 'Здесь могла быть ваша цитата о высоком и вечном.',
+    likes: 215
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '25 часов назад',
+    image: {
+      src: 'img/catalog-5.jpg',
+      alt: 'Фото 5'
+    },
+    author: 'Сергей',
+    description: 'Самая кубанская в мире!',
+    likes: 4
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '40 часов назад',
+    image: {
+      src: 'img/catalog-6.jpg',
+      alt: 'Фото 6'
+    },
+    author: 'Максим',
+    description: 'Где снег-то?',
+    likes: 150
+  },
+  {
+    created: '2017-12-01T00:00:00',
+    time: '45 часов назад',
+    image: {
+      src: 'img/catalog-7.jpg',
+      alt: 'Фото 7'
+    },
+    author: 'Надежда',
+    description: 'Всем GM и взаимные лайки!',
+    likes: 2560
+  }
+] %}
+
+{% set add = {
+  heading: 'Добавить фотографию',
+  fileLabel: 'Добавить файл',
+  filters: [
+    {
+      name: 'crop',
+      value: 80,
+      label: 'Обрезать'
+    },
+    {
+      name: 'pink',
+      value: 20,
+      label: 'Розовый'
+    },
+    {
+      name: 'contrast',
+      value: 50,
+      label: 'Контраст'
+    }
+  ],
+  submitTitle: 'Запостить',
+  resetTitle: 'Отмена'
+}%}

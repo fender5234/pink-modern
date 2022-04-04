@@ -1,0 +1,50 @@
+{% macro value(has) %}
+  <td class="tariffs__detail">
+    <p class="tariffs__value tariffs__value--{{ has }}">
+      <span class="visually-hidden">
+        {{ 'Есть' if has == 'yes' else 'Нет' }}.
+      </span>
+    </p>
+  </td>
+{% endmacro %}
+
+<table class="tariffs {{ mix }}">
+  <thead class="tariffs__header">
+    <tr class="tariffs__names">
+      <th class="visually-hidden" scope="col">Свойства</th>
+
+      {% for tariff in data.tariffs.list %}
+        <th class="tariffs__name" scope="col">
+          {{ tariff.title }}
+          <p class="tariffs__price">{{ tariff.price }} USD</p>
+        </th>
+      {% endfor %}
+    </tr>
+  </thead>
+
+  <tbody class="tariffs__props">
+    <tr class="tariffs__details">
+      <th class="tariffs__detail" scope="row">Розовый фильтр</th>
+
+      {% for tariff in data.tariffs.list %}
+        {{ value(tariff.filter) }}
+      {% endfor %}
+    </tr>
+
+    <tr class="tariffs__details">
+      <th class="tariffs__detail" scope="row">Смайлики</th>
+
+      {% for tariff in data.tariffs.list %}
+        {{ value(tariff.smiles) }}
+      {% endfor %}
+    </tr>
+
+    <tr class="tariffs__details">
+      <th class="tariffs__detail" scope="row">Комментарии</th>
+
+      {% for tariff in data.tariffs.list %}
+        {{ value(tariff.comments) }}
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>

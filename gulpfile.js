@@ -9,35 +9,38 @@ import rename from 'gulp-rename';
 const { src, dest, watch, series } = gulp;
 const server = browsersync.create();
 const checkLintspaces = () => lintspaces({
-	editorconfig: '.editorconfig'
+  editorconfig: '.editorconfig'
 });
 
 const buildHTML = () => src('source/njk/pages/**/*.njk')
+  .pipe(posthtml())
+  .pipe(bemValidator())
+  .pipe(rename({ extname: '.html' }))
+  .pipe(dest('source'));
+
+const testHTML = () => src('source/njk/**/*.njk')
   .pipe(checkLintspaces())
-  .pipe(lintspaces.reporter())
-	.pipe(posthtml())
-	.pipe(bemValidator())
-	.pipe(rename({ extname: '.html' }))
-	.pipe(dest('source'));
+  .pipe(lintspaces.reporter());
 
 const reload = (done) => {
-	server.reload();
-	done();
+  server.reload();
+  done();
 };
 
 const startServer = () => {
-	server.init({
-		cors: true,
-		open: true,
-		server: 'source',
-		ui: false
-	});
+  server.init({
+    cors: true,
+    open: true,
+    server: 'source',
+    ui: false,
+    port: 2000
+  });
 
-	watch('source/njk/**/*.njk', series(buildHTML, reload));
+  watch('source/njk/**/*.njk', series(testHTML, buildHTML, reload));
 };
 
 const cleanDest = () => del([
-	`source/**/*.html`
+  `source/**/*.html`
 ]);
 
-export default series(cleanDest, buildHTML, startServer);
+export default series(cleanDest, testHTML, buildHTML, startServer);

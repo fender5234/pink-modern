@@ -1,0 +1,24 @@
+<section class="slider {{ slider.mix }}">
+  <h2 class="visually-hidden">{{ slider.heading }}</h2>
+
+  <div class="slider__wrapper">
+    {% set mix = 'slider__list' %}
+    {% include 'blocks/' + slider.slot + '.njk' %}
+  </div>
+
+  {% set togglers = {
+    mix: 'slider__togglers',
+    title: slider.togglers.title,
+    length: slider.togglers.length
+  } %}
+  {% include 'blocks/togglers.njk' %}
+
+  {% if not mobileOnly %}
+    <button class="slider__ring slider__ring--prev" type="button">
+      <span class="visually-hidden">К предыдущему слайду.</span>
+    </button>
+    <button class="slider__ring slider__ring--next" type="button">
+      <span class="visually-hidden">К следующему слайду.</span>
+    </button>
+  {% endif %}
+</section>

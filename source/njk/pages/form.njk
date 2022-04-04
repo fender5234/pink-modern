@@ -1,0 +1,15 @@
+{% extends 'layout.njk' %}
+
+{% block main %}
+  {% set mix = 'page-main__content' %}
+  {% set slot = 'form' %}
+  {% include 'blocks/content.njk' %}
+{% endblock %}
+
+{% block modal %}
+  {% set modal = data.success %}
+  {% include 'blocks/modal.njk' %}
+
+  {% set modal = data.error %}
+  {% include 'blocks/modal.njk' %}
+{% endblock %}
