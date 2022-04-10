@@ -12,7 +12,10 @@
     {% include 'blocks/page-header.njk' %}
 
     <main class="page-main page__main">
-      {% block main %}{% endblock %}
+      {% block main %}
+        {% set mix = 'page-main__content' %}
+        {% include 'blocks/content.njk' %}
+      {% endblock %}
     </main>
 
     {% set mix = 'page__footer' %}

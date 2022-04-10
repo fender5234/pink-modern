@@ -2,7 +2,7 @@
   class="fields__input"
   id="{{ fields.name }}-{{ i }}"
   name="{{ fields.name }}{{ '[]' if fields.list.length > 1 }}"
-  placeholder="{{ field.placeholder }}{{ ' *' if field.required }}"
+  placeholder="{{ field.placeholder }}{{ ' *' if field.placeholder }}"
   {{ 'required' if field.required }}
 {% endmacro %}
 
@@ -21,6 +21,7 @@
         <input
           {{ attrs(field, loop.index) }}
           type="{{ field.type or 'text' }}"
+          {{ 'value="' + field.value + '"' if field.value }}
           {{ 'pattern="' + field.pattern + '"' if field.pattern }}
         />
       {% endif %}
