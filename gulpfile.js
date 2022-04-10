@@ -43,4 +43,5 @@ const cleanDest = () => del([
   `source/**/*.html`
 ]);
 
+export const build = buildHTML;
 export default series(cleanDest, testHTML, buildHTML, startServer);

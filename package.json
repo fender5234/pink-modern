@@ -23,7 +23,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint .",
     "lint": "npm run editorconfig",
-    "build": "echo 'Build task'",
+    "build": "gulp build",
     "start": "gulp"
   },
   "editorconfig-cli": [
