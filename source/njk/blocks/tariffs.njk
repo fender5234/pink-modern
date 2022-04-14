@@ -23,28 +23,14 @@
   </thead>
 
   <tbody class="tariffs__props">
-    <tr class="tariffs__details">
-      <th class="tariffs__detail" scope="row">Розовый фильтр</th>
+    {% for param in data.tariffs.params %}
+      <tr class="tariffs__details">
+        <th class="tariffs__detail" scope="row">{{ param.title }}</th>
 
-      {% for tariff in data.tariffs.list %}
-        {{ value(tariff.filter) }}
-      {% endfor %}
-    </tr>
-
-    <tr class="tariffs__details">
-      <th class="tariffs__detail" scope="row">Смайлики</th>
-
-      {% for tariff in data.tariffs.list %}
-        {{ value(tariff.smiles) }}
-      {% endfor %}
-    </tr>
-
-    <tr class="tariffs__details">
-      <th class="tariffs__detail" scope="row">Комментарии</th>
-
-      {% for tariff in data.tariffs.list %}
-        {{ value(tariff.comments) }}
-      {% endfor %}
-    </tr>
+        {% for tariff in data.tariffs.list %}
+          {{ value(tariff[param.option]) }}
+        {% endfor %}
+      </tr>
+    {% endfor %}
   </tbody>
 </table>

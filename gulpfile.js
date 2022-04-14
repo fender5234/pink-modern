@@ -27,8 +27,7 @@ export const buildHTML = () => src('source/njk/pages/**/*.njk')
   .pipe(posthtml())
   .pipe(bemValidator())
   .pipe(rename({ extname: '.html' }))
-  .pipe(dest('source'))
-  .pipe(browser.stream());
+  .pipe(dest('source'));
 
 export const testEditorconfig = () => src(editorconfigSources)
   .pipe(checkLintspaces())
@@ -42,7 +41,7 @@ export const styles = () => src('source/less/style.less', { sourcemaps: true })
   .pipe(dest('source/css', { sourcemaps: '.' }))
   .pipe(browser.stream());
 
-export const testStyles = () => src('source/less/**/*.less', { sourcemaps: true })
+export const testStyles = () => src('source/less/**/*.less')
   .pipe(checkLintspaces())
   .pipe(lintspaces.reporter())
   .pipe(postcss([
@@ -68,8 +67,13 @@ const server = (done) => {
   done();
 };
 
+const reload = (done) => {
+  browser.reload();
+  done();
+};
+
 const watcher = () => {
-  watch(editorconfigSources, series(testEditorconfig, buildHTML));
+  watch(editorconfigSources, series(testEditorconfig, buildHTML, reload));
   watch('source/less/**/*.less', series(testStyles, styles));
 };
 
