@@ -5,6 +5,7 @@ import lintspaces from 'gulp-lintspaces';
 import posthtml from 'gulp-posthtml';
 import rename from 'gulp-rename';
 import less from 'gulp-less';
+import lessSyntax from 'postcss-less';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import stylelint from 'stylelint';
@@ -51,7 +52,9 @@ export const testStyles = () => src('source/less/**/*.less', { sourcemaps: true 
       clearAllMessages: true,
       throwError: false
     })
-  ]));
+  ], {
+    syntax: lessSyntax
+  }));
 
 const server = (done) => {
   browser.init({

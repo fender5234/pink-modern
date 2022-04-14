@@ -1,11 +1,11 @@
 <article class="photo">
-  <h2 class="visually-hidden">{{ photo.image.alt }}</h2>
+  <h2 class="visually-hidden">{{ photo.heading }}.</h2>
 
   <figure>
     {% set picture = {
       mix: 'photo__picture',
-      src: photo.image.src,
-      alt: photo.image.alt
+      src: photo.image,
+      alt: photo.imageText
     } %}
     {% include 'blocks/picture.njk' %}
 
