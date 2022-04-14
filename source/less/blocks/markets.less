@@ -1,0 +1,35 @@
+.markets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.markets__item {
+  margin: 0 6px;
+}
+
+.markets__link {
+  display: block;
+  width: 47px;
+  height: 56px;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  &--apple {
+    background-image: url("../img/market-apple.svg");
+  }
+
+  &--android {
+    background-image: url("../img/market-android.svg");
+    background-position: 50% 16px;
+  }
+
+  &--windows {
+    background-image: url("../img/market-windows.svg");
+    background-position: 50% 22px;
+  }
+}

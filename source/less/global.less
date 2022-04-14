@@ -3,13 +3,27 @@
   --color-white: #ffffff;
   --color-white-15: rgba(255, 255, 255, 0.15);
   --color-darkblue: #283645;
+  --color-blackblue: #1d2631;
   --color-pink: #d22856;
   --color-pink-30: rgba(210, 40, 86, 0.3);
   min-width: 320px;
   font-size: 14px;
+  line-height: 1.2;
   font-family: "Open Sans", "Arial", sans-serif;
 }
 
 body {
   margin: 0;
+}
+
+a {
+  color: inherit;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-property: color, opacity, background-color, border-color, box-shadow;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
 }
