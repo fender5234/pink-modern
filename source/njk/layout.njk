@@ -6,6 +6,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Пинк &gt; {{ data.title }}</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
     {% set mix = 'page__header' %}
@@ -22,5 +23,12 @@
     {% include 'blocks/page-footer.njk' %}
 
     {% block modal %}{% endblock %}
+
+    <script>
+      window.pinegladePP = {
+        breakpoints: [320, 660, 1200]
+      };
+    </script>
+    <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>
   </body>
 </html>
