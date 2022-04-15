@@ -1,0 +1,26 @@
+.togglers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+.togglers__item {
+  margin: 10px;
+}
+
+.togglers__control {
+  display: block;
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  background-color: var(--color-darkblue-30);
+  border: none;
+  border-radius: 50%;
+
+  &--active {
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 3px var(--color-darkblue);
+  }
+}

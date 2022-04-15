@@ -7,8 +7,10 @@
 
   <dl class="features__list">
     {% for item in data.features.list %}
-      <dt class="features__item">{{ item.title }}</dt>
-      <dd class="features__description">{{ item.description }}</dd>
+      <div class="features__item features__item--{{ loop.index }}">
+        <dt class="features__title">{{ item.title }}</dt>
+        <dd class="features__description">{{ item.description }}</dd>
+      </div>
     {% endfor %}
   </dl>
 </section>

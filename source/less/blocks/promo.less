@@ -32,8 +32,13 @@
   line-height: 1;
   text-align: center;
   text-decoration: none;
-  border: 3px solid;
+  border: 3px solid var(--color-white);
   border-radius: 29px;
+
+  &:hover,
+  &:active {
+    background-color: var(--color-white);
+  }
 
   .pink-states();
 }

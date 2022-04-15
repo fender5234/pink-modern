@@ -1,0 +1,38 @@
+.slider {
+  --count: 3;
+  padding: 0 0 30px;
+
+  &--alter {
+    background-color: var(--color-lightgrey);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 18px;
+      background-image: var(--skew-lightgrey-gradient);
+    }
+  }
+}
+
+.slider__wrapper {
+  overflow: hidden;
+}
+
+.slider__list {
+  display: grid;
+  grid-template-columns: repeat(var(--count), 1fr);
+  width: 300%;
+  margin: 0;
+}
+
+.slider__table {
+  width: 300%;
+}
+
+.slider__ring {
+  display: none;
+}
+
+.slider__togglers {
+  margin: 0;
+}

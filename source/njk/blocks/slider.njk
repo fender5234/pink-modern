@@ -2,18 +2,19 @@
   <h2 class="visually-hidden">{{ slider.heading }}</h2>
 
   <div class="slider__wrapper">
-    {% set mix = 'slider__list' %}
+    {% set mix = 'slider__table' if slider.isTable else 'slider__list' %}
     {% include 'blocks/' + slider.slot + '.njk' %}
   </div>
 
   {% set togglers = {
     mix: 'slider__togglers',
     title: slider.togglers.title,
-    length: slider.togglers.length
+    length: slider.togglers.length,
+    activeIndex: 2 if slider.isTable else 1
   } %}
   {% include 'blocks/togglers.njk' %}
 
-  {% if not mobileOnly %}
+  {% if not slider.isTable %}
     <button class="slider__ring slider__ring--prev" type="button">
       <span class="visually-hidden">К предыдущему слайду.</span>
     </button>

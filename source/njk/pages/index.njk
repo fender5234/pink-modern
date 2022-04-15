@@ -19,14 +19,14 @@
   {% include 'blocks/slider.njk' %}
 
   {% set slider = {
-    mix: 'page-main__tariffs',
+    mix: 'slider--alter page-main__tariffs',
     heading: data.tariffs.heading,
     slot: 'tariffs',
     togglers: {
       title: 'Тариф',
       length: data.tariffs.list | length
     },
-    mobileOnly: true
+    isTable: true
   } %}
   {% include 'blocks/slider.njk' %}
 
