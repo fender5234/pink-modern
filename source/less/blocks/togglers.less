@@ -13,6 +13,7 @@
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -21,11 +22,28 @@
     margin: auto;
     background-color: var(--color-darkblue-30);
     border-radius: 50%;
-    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
 
-  &--active::before {
-    background-color: var(--color-white);
-    box-shadow: 0 0 0 3px var(--color-darkblue);
+  &:hover::before {
+    background-color: var(--color-darkblue-60);
+  }
+
+  &:active::before {
+    background-color: var(--color-darkblue-10);
+  }
+
+  &--active {
+    cursor: default;
+
+    &::before,
+    &:hover::before,
+    &:active::before {
+      background-color: var(--color-white);
+    }
+
+    &::before {
+      box-shadow: 0 0 0 3px var(--color-darkblue);
+    }
   }
 }

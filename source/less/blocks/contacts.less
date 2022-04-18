@@ -1,5 +1,5 @@
 .contacts {
-  padding: 39px 20px;
+  padding: 39px 20px 0;
   font-weight: 300;
   font-size: 24px;
   line-height: 1.3617;
@@ -38,6 +38,16 @@
 .contacts__link {
   color: var(--color-pink);
   text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--color-darkblue-30);
+    text-decoration: none;
+  }
 }
 
 .contacts__map {
