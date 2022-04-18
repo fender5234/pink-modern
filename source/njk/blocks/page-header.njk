@@ -1,6 +1,13 @@
 <header class="page-header {{ mix }}">
-  {% set mix = 'page-header__logo' %}
-  {% include 'blocks/logo.njk' %}
+  <p class="page-header__top">
+    {% set mix = 'page-header__logo' %}
+    {% include 'blocks/logo.njk' %}
+
+    <a class="page-header__toggler" href="#!">
+      <span class="visually-hidden">Открыть меню</span>
+      <span class="visually-hidden" hidden>Закрыть меню</span>
+    </a>
+  </p>
 
   {% set mix = 'page-header__nav' %}
   {% include 'blocks/nav.njk' %}
