@@ -1,5 +1,8 @@
-{% macro value(has) %}
-  <td class="tariffs__detail">
+{% macro value(has, title, index) %}
+  <td
+    class="tariffs__detail {{ 'tariffs__detail--central' if index == 2 }}"
+    data-title="{{ title }}"
+  >
     <p class="tariffs__value tariffs__value--{{ has }}">
       <span class="visually-hidden">
         {{ 'Есть' if has == 'yes' else 'Нет' }}.
@@ -16,9 +19,15 @@
       </th>
 
       {% for tariff in data.tariffs.list %}
-        <th class="tariffs__name" scope="col">
+        <th
+          class="tariffs__name {{ 'tariffs__name--central' if loop.index == 2 }} {{ 'labelled' if tariff.label }}"
+          scope="col"
+        >
           {{ tariff.title }}
           <p class="tariffs__price">{{ tariff.price }} USD</p>
+          {% if tariff.label %}
+            <p class="labelled__label">{{ tariff.label }}</p>
+          {% endif %}
         </th>
       {% endfor %}
     </tr>
@@ -30,7 +39,7 @@
         <th class="tariffs__detail" scope="row">{{ param.title }}</th>
 
         {% for tariff in data.tariffs.list %}
-          {{ value(tariff[param.option]) }}
+          {{ value(tariff[param.option], param.title, loop.index) }}
         {% endfor %}
       </tr>
     {% endfor %}

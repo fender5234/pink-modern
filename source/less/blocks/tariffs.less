@@ -10,20 +10,41 @@
 
 .tariffs__name {
   width: calc(100vw - var(--scrollbar-width) - 40px);
-  padding: 12px 29px 29px;
+  padding: 12px 60px 29px;
   font-weight: 700;
   font-size: 16px;
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-darkblue);
-  border-right: 2px solid var(--color-lightgrey);
+
+  &--central {
+    position: relative;
+
+    // Псевдоэлементы с целью залезания на них лейбла с красным фоном
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--color-lightgrey);
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
 
   &:nth-child(2) {
     border-top-left-radius: 3px;
   }
 
   &:last-child {
-    border-right-color: var(--color-darkblue);
     border-top-right-radius: 3px;
   }
 }
@@ -35,17 +56,50 @@
 }
 
 .tariffs__detail {
+  position: relative;
   box-sizing: border-box;
   width: calc(100vw - var(--scrollbar-width) - 40px);
+  padding: 13px 20px 16px;
   background-color: var(--color-white);
-  border-right: 2px solid var(--color-grey);
+  border-bottom: 2px solid var(--color-grey);
+
+  &--central {
+    border-right: 2px solid var(--color-grey);
+    border-left: 2px solid var(--color-grey);
+  }
 
   &:first-child {
     display: none;
+  }
+
+  &:nth-child(2) {
     border-left: 2px solid var(--color-grey);
   }
 
   &:last-child {
-    border-right: none;
+    border-right: 2px solid var(--color-grey);
+  }
+
+  &::before {
+    content: attr(data-title);
+  }
+}
+
+.tariffs__value {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+  width: 31px;
+  height: 27px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  &--yes {
+    background-image: url("../img/icon-yes.svg");
+  }
+
+  &--no {
+    background-image: url("../img/icon-no.svg");
   }
 }
