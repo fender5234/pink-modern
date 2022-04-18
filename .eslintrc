@@ -1,0 +1,28 @@
+root: true
+
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: "module"
+
+env:
+  es2017: true
+  browser: true
+
+globals:
+  process: readonly
+  require: readonly
+  module: readonly
+
+extends:
+  "htmlacademy/vanilla"
+
+rules:
+  no-magic-numbers:
+    - error
+    -
+      ignore:
+        - -1
+        - 0
+        - 1
+        - 10
+        - 100

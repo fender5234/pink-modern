@@ -11,7 +11,9 @@
 <table class="tariffs {{ mix }}">
   <thead class="tariffs__header">
     <tr class="tariffs__names">
-      <th class="visually-hidden" scope="col">Свойства</th>
+      <th class="tariffs__empty" scope="col">
+        <p class="visually-hidden">Свойства</p>
+      </th>
 
       {% for tariff in data.tariffs.list %}
         <th class="tariffs__name" scope="col">

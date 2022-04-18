@@ -8,7 +8,9 @@
     "browser-sync": "2.27.9",
     "cssnano": "5.1.7",
     "del": "6.0.0",
+    "eslint-config-htmlacademy": "5.1.2",
     "gulp": "4.0.2",
+    "gulp-eslint": "6.0.0",
     "gulp-html-bem-validator": "1.0.5",
     "gulp-less": "5.0.0",
     "gulp-lintspaces": "1.0.1",
@@ -31,6 +33,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "lint": "npm run editorconfig && npm run stylelint",
+    "test": "gulp test",
     "build": "gulp build",
     "start": "gulp"
   },

@@ -6,20 +6,25 @@
   list-style: none;
 }
 
-.togglers__item {
-  margin: 10px;
-}
-
 .togglers__control {
-  display: block;
-  width: 6px;
-  height: 6px;
+  display: flex;
+  width: 26px;
+  height: 26px;
   padding: 0;
-  background-color: var(--color-darkblue-30);
+  background-color: transparent;
   border: none;
-  border-radius: 50%;
 
-  &--active {
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin: auto;
+    background-color: var(--color-darkblue-30);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &--active::before {
     background-color: var(--color-white);
     box-shadow: 0 0 0 3px var(--color-darkblue);
   }

@@ -9,6 +9,7 @@
       content: "";
       display: block;
       height: 18px;
+      margin: 0 0 83px;
       background-image: var(--skew-lightgrey-gradient);
     }
   }
@@ -23,10 +24,14 @@
   grid-template-columns: repeat(var(--count), 1fr);
   width: 300%;
   margin: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 .slider__table {
-  width: 300%;
+  width: calc(300% - 120px);
+  margin: 0 20px;
+  table-layout: fixed;
+  transition: transform 0.3s ease-in-out;
 }
 
 .slider__ring {

@@ -1,7 +1,12 @@
 <ul class="togglers {{ togglers.mix }}">
   {% for toggler in range(1, togglers.length + 1) %}
     <li class="togglers__item">
-      <button class="togglers__control {{ 'togglers__control--active' if loop.index == togglers.activeIndex }}" type="button">
+      <button
+        class="togglers__control {{ 'togglers__control--active' if loop.index == 1 }}"
+        type="button"
+        data-index="{{ loop.index }}"
+        {{ 'data-active' if togglers.activeIndex == loop.index and loop.index > 1 }}
+      >
         <span class="visually-hidden">
           {{ togglers.title }} {{ loop.index }}
         </span>

@@ -13,16 +13,12 @@ module.exports = () => ({
   plugins: [
     (() => async (tree) => {
       // Сборка шаблонизатором Nunjucks
-
-      const page = getPageName(tree);
-      let data = {
-        isDev,
-        page
-      };
-
       nunjucks.configure('source/njk', { autoescape: false });
 
-      return parser(nunjucks.renderString(render(tree), data));
+      return parser(nunjucks.renderString(render(tree), {
+        isDev,
+        page: getPageName(tree)
+      }));
     })(),
     require('htmlnano')({ collapseWhitespace: 'aggressive' }),
     getPosthtmlW3c({

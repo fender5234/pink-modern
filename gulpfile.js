@@ -2,6 +2,7 @@ import bemValidator from 'gulp-html-bem-validator';
 import browser from 'browser-sync';
 import gulp from 'gulp';
 import lintspaces from 'gulp-lintspaces';
+import eslint from 'gulp-eslint';
 import posthtml from 'gulp-posthtml';
 import rename from 'gulp-rename';
 import less from 'gulp-less';
@@ -19,8 +20,11 @@ const checkLintspaces = () => lintspaces({
 const editorconfigSources = [
   'source/njk/**/*.njk',
   '*.json',
-  '*.js',
   'source/img/**/*.svg'
+];
+const jsSources = [
+  'source/js/**/*.js',
+  '*.js'
 ];
 
 export const buildHTML = () => src('source/njk/pages/**/*.njk')
@@ -38,8 +42,7 @@ export const styles = () => src('source/less/style.less', { sourcemaps: true })
   .pipe(postcss([
     autoprefixer()
   ]))
-  .pipe(dest('source/css', { sourcemaps: '.' }))
-  .pipe(browser.stream());
+  .pipe(dest('source/css', { sourcemaps: '.' }));
 
 export const testStyles = () => src('source/less/**/*.less')
   .pipe(checkLintspaces())
@@ -54,6 +57,14 @@ export const testStyles = () => src('source/less/**/*.less')
   ], {
     syntax: lessSyntax
   }));
+
+export const testScripts = () => src(jsSources)
+  .pipe(eslint({
+    fix: false
+  }))
+  .pipe(eslint.format())
+  .pipe(checkLintspaces())
+  .pipe(lintspaces.reporter());
 
 const server = (done) => {
   browser.init({
@@ -74,10 +85,11 @@ const reload = (done) => {
 
 const watcher = () => {
   watch(editorconfigSources, series(testEditorconfig, buildHTML, reload));
-  watch('source/less/**/*.less', series(testStyles, styles));
+  watch('source/less/**/*.less', series(testStyles, styles, reload));
+  watch(jsSources, series(testScripts, reload));
 };
 
 export const build = parallel(buildHTML, styles);
-export const test = parallel(testEditorconfig, testStyles);
+export const test = parallel(testEditorconfig, testStyles, testScripts);
 
 export default series(test, build, server, watcher);
