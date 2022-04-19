@@ -1,11 +1,10 @@
 <section class="add {{ mix }}">
-  <h2 class="visually-hidden">{{ data.add.heading }}</h2>
+  <h2 class="visually-hidden">{{ data.add.heading }}.</h2>
 
-  <form class="add__form" action="{{ config.action }}" method="post">
+  <form class="add__form" action="{{ config.action }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="userId" value="{{ config.userId }}">
+
     <p class="add__file">
-      <label class="add__file-chooser" for="add">
-        <span class="visually-hidden">{{ data.add.fileLabel }}.</span>
-      </label>
       <input
         class="visually-hidden"
         id="add"
@@ -14,10 +13,13 @@
         accept="image/jpeg, image/png"
         required
       />
+      <label class="add__file-chooser" for="add">
+        <span class="visually-hidden">{{ data.add.fileLabel }}.</span>
+      </label>
     </p>
 
     <fieldset class="add__filters">
-      <legend class="visually-hidden">{{ data.add.filtersLabel }}</legend>
+      <legend class="visually-hidden">{{ data.add.filtersLabel }}.</legend>
 
       {% for filter in data.add.filters %}
         <p class="add__filter {{ 'add__filter--active' if loop.first }}">
@@ -26,7 +28,7 @@
           </button>
           <label class="visually-hidden" for="{{ filter.name }}">{{ filter.label }}.</label>
           <input
-            class="add__range"
+            class="range add__range"
             id="{{ filter.name }}"
             name="{{ filter.name }}"
             type="range"

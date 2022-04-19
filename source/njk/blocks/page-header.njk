@@ -4,8 +4,8 @@
     {% include 'blocks/logo.njk' %}
 
     <a class="page-header__toggler" href="#!">
-      <span class="visually-hidden">Открыть меню</span>
-      <span class="visually-hidden" hidden>Закрыть меню</span>
+      <span class="visually-hidden">{{ config.menu.labelToOpen }}.</span>
+      <span class="visually-hidden" hidden>{{ config.menu.labelToClose }}.</span>
     </a>
   </p>
 

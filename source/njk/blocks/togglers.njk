@@ -7,9 +7,7 @@
         data-index="{{ loop.index }}"
         {{ 'data-active' if togglers.activeIndex == loop.index and loop.index > 1 }}
       >
-        <span class="visually-hidden">
-          {{ togglers.title }} {{ loop.index }}
-        </span>
+        <span class="visually-hidden">{{ togglers.title }} {{ loop.index }}.</span>
       </button>
     </li>
   {% endfor %}

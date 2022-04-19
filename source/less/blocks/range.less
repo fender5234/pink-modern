@@ -1,0 +1,43 @@
+.range__track() {
+  height: 2px;
+  background-color: var(--color-darkblue);
+}
+
+.range__thumb(@y: 1px) {
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-lightgrey);
+  border: 2px solid var(--color-pink);
+  border-radius: 50%;
+  transform: translateY(@y);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  appearance: none;
+
+  &:active {
+    background-color: var(--color-pink);
+  }
+}
+
+.range {
+  height: 16px;
+  background-color: transparent;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    .range__track();
+  }
+
+  &::-moz-range-track {
+    .range__track();
+  }
+
+  &::-webkit-slider-thumb {
+    .range__thumb(-5px);
+  }
+
+  &::-moz-range-thumb {
+    .range__thumb();
+  }
+}

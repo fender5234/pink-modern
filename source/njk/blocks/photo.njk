@@ -25,9 +25,10 @@
   </figure>
 
   <form class="photo__likes-form" action="{{ config.action }}" method="post">
-    <button class="photo__like-submit" type="submit" name="userId" value="{{ config.userId }}">
-      <span class="visually-hidden">Поставить лайк.</span>
+    <input type="hidden" name="userId" value="{{ config.userId }}">
+    <button class="photo__like-submit" type="submit" name="photo" value="{{ photo.image }}">
+      <span class="visually-hidden">{{ data.likes.label }}.</span>
     </button>
-    <p class="photo__likes">Нравится: {{ photo.likes }}</p>
+    <p class="photo__likes">{{ data.likes.prepend }}: {{ photo.likes }}</p>
   </form>
 </article>

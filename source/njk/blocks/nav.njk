@@ -1,6 +1,6 @@
 <nav class="nav {{ mix }}">
   <ul class="nav__list">
-    {% for link in config.menu %}
+    {% for link in config.menu.list %}
       <li class="nav__item">
         {% if link.page == page %}
           <a class="nav__link nav__link--current" href="{{ link.href }}" aria-current="page">

@@ -5,6 +5,11 @@
   append: 'Затмите их всех!<br>Выкладывайте все, что накопилось в телефоне!'
 } %}
 
+{% set likes = {
+  label: 'Поставить лайк',
+  prepend: 'Нравится'
+} %}
+
 {% set catalog = [
   {
     panorama: 'Панорама дня',
@@ -87,7 +92,7 @@
   filters: [
     {
       name: 'crop',
-      value: 86,
+      value: 85,
       label: 'Обрезать'
     },
     {
@@ -96,9 +101,9 @@
       label: 'Розовый'
     },
     {
-      name: 'contrast',
+      name: 'grayscale',
       value: 50,
-      label: 'Контраст'
+      label: 'Чёрно-белый режим'
     }
   ],
   submitTitle: 'Запостить',

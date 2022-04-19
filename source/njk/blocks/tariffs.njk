@@ -1,21 +1,8 @@
-{% macro value(has, title, index) %}
-  <td
-    class="tariffs__detail {{ 'tariffs__detail--central' if index == 2 }}"
-    data-title="{{ title }}"
-  >
-    <p class="tariffs__value tariffs__value--{{ has }}">
-      <span class="visually-hidden">
-        {{ 'Есть' if has == 'yes' else 'Нет' }}.
-      </span>
-    </p>
-  </td>
-{% endmacro %}
-
 <table class="tariffs {{ mix }}">
   <thead class="tariffs__header">
     <tr class="tariffs__names">
       <th class="tariffs__empty" scope="col">
-        <p class="visually-hidden">Свойства</p>
+        <p class="visually-hidden">{{ data.tariffs.emptyCellText }}.</p>
       </th>
 
       {% for tariff in data.tariffs.list %}
@@ -39,7 +26,14 @@
         <th class="tariffs__detail" scope="row">{{ param.title }}</th>
 
         {% for tariff in data.tariffs.list %}
-          {{ value(tariff[param.option], param.title, loop.index) }}
+          <td
+            class="tariffs__detail {{ 'tariffs__detail--central' if loop.index == 2 }}"
+            data-title="{{ param.title }}"
+          >
+            <p class="tariffs__value tariffs__value--{{ tariff[param.option] }}">
+              <span class="visually-hidden">{{ config.has[tariff[param.option]] }}.</span>
+            </p>
+          </td>
         {% endfor %}
       </tr>
     {% endfor %}

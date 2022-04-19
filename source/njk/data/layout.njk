@@ -2,42 +2,56 @@
 {% set action = 'https://echo.htmlacademy.ru' %}
 {% set userId = 77777 %}
 
-{% set menu = [
-  {
-    title: 'Главная',
-    href: 'index.html',
-    page: 'index'
-  },
-  {
-    title: 'Фотографии',
-    href: 'catalog.html',
-    page: 'catalog'
-  },
-  {
-    title: 'Конкурс',
-    href: 'form.html',
-    page: 'form'
-  },
-  {
-    title: 'HTML Academy',
-    href: '#!',
-    page: 'academy'
-  }
-] %}
+{% set has = {
+  yes: 'Есть',
+  no: 'Нет'
+} %}
+
+{% set slider = {
+  prevLabel: 'К предыдущему слайду',
+  nextLabel: 'К следующему слайду'
+} %}
+
+{% set menu = {
+  labelToOpen: 'Открыть меню',
+  labelToClose: 'Закрыть меню',
+  list: [
+    {
+      title: 'Главная',
+      href: 'index.html',
+      page: 'index'
+    },
+    {
+      title: 'Фотографии',
+      href: 'catalog.html',
+      page: 'catalog'
+    },
+    {
+      title: 'Конкурс',
+      href: 'form.html',
+      page: 'form'
+    },
+    {
+      title: 'HTML Academy',
+      href: '#!',
+      page: 'academy'
+    }
+  ]
+} %}
 
 {% set socials = [
   {
-    title: 'Vkontakte.',
+    title: 'Vkontakte',
     href: '#!',
     icon: 'vkontakte'
   },
   {
-    title: 'Telegram.',
+    title: 'Telegram',
     href: '#!',
     icon: 'telegram'
   },
   {
-    title: 'Youtube.',
+    title: 'Youtube',
     href: '#!',
     icon: 'youtube'
   }

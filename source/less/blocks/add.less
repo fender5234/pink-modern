@@ -4,18 +4,41 @@
 }
 
 .add__file {
-  margin: 0;
-}
-
-.add__file-chooser {
-  display: block;
+  display: flex;
   max-width: 300px;
   height: 374px;
   margin: 0 auto;
-  background-image: url("../img/photo-add-mobile.jpg");
+
+  &:focus-within {
+    outline: 2px solid var(--color-pink);
+  }
+}
+
+.add__file-chooser {
+  --image: url("../img/photo-add-mobile.jpg");
+  --size: 100%;
+  --pink: 0;
+  --grayscale: 0;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  margin: auto;
+  background-image: var(--image);
+  background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: cover;
   cursor: pointer;
+  filter: grayscale(var(--grayscale));
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-pink);
+    opacity: var(--pink);
+  }
 }
 
 .add__filters {
@@ -67,27 +90,29 @@
   &--crop::before {
     width: 44px;
     height: 44px;
+    mask-image: url("../img/icon-crop.svg");
   }
 
   &--pink::before {
     width: 48px;
     height: 43px;
+    mask-image: url("../img/icon-fill.svg");
   }
 
-  &--contrast::before {
+  &--grayscale::before {
     width: 32px;
     height: 32px;
+    mask-image: url("../img/icon-grayscale.svg");
   }
 }
 
 .add__range {
+  position: absolute;
   bottom: 28px;
   left: 67px;
+  display: none;
   width: calc(100% - 87px);
-  height: 16px;
   margin: 0;
-
-  .visually-hidden();
 }
 
 .add__filter--active {
@@ -96,8 +121,7 @@
   }
 
   .add__range {
-    position: absolute;
-    transform: none;
+    display: block;
   }
 }
 
