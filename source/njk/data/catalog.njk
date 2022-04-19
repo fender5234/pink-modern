@@ -1,7 +1,7 @@
 {% set title = 'Фотографии пользователей' %}
 
 {% set content = {
-  prepend: 'Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?',
+  prepend: 'Взгляните на фотографии, которые выкладывают пользователи!<br>Видите, как не хватает ваших?',
   append: 'Затмите их всех!<br>Выкладывайте все, что накопилось в телефоне!'
 } %}
 
@@ -10,17 +10,17 @@
     panorama: 'Панорама дня',
     created: '2017-12-01T00:00:00',
     time: '5 минут назад',
-    image: 'catalog-1.jpg',
+    image: 'catalog-1-mobile.jpg',
     imageText: '',
     heading: 'Фото 1',
     author: 'Анна',
-    description: 'Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!',
+    description: 'Прыгать или нет? Напишите в комментарии свой совет и<br>смотрите прямую трансляцию в перископе, задавайте свои вопросы!',
     likes: 215
   },
   {
     created: '2017-12-01T00:00:00',
     time: '5 часов назад',
-    image: 'catalog-2.jpg',
+    image: 'catalog-2-mobile.jpg',
     imageText: '',
     heading: 'Фото 2',
     author: 'Левон',
@@ -30,7 +30,7 @@
   {
     created: '2017-12-01T00:00:00',
     time: '12 часов назад',
-    image: 'catalog-3.jpg',
+    image: 'catalog-3-mobile.jpg',
     imageText: '',
     heading: 'Фото 3',
     author: 'Антон',
@@ -40,7 +40,7 @@
   {
     created: '2017-12-01T00:00:00',
     time: '20 часов назад',
-    image: 'catalog-4.jpg',
+    image: 'catalog-4-mobile.jpg',
     imageText: '',
     heading: 'Фото 4',
     author: 'Борис',
@@ -50,7 +50,7 @@
   {
     created: '2017-12-01T00:00:00',
     time: '25 часов назад',
-    image: 'catalog-5.jpg',
+    image: 'catalog-5-mobile.jpg',
     imageText: '',
     heading: 'Фото 5',
     author: 'Сергей',
@@ -60,7 +60,7 @@
   {
     created: '2017-12-01T00:00:00',
     time: '40 часов назад',
-    image: 'catalog-6.jpg',
+    image: 'catalog-6-mobile.jpg',
     imageText: '',
     heading: 'Фото 6',
     author: 'Максим',
@@ -70,7 +70,7 @@
   {
     created: '2017-12-01T00:00:00',
     time: '45 часов назад',
-    image: 'catalog-7.jpg',
+    image: 'catalog-7-mobile.jpg',
     imageText: '',
     heading: 'Фото 7',
     author: 'Надежда',
@@ -82,10 +82,12 @@
 {% set add = {
   heading: 'Добавить фотографию',
   fileLabel: 'Добавить файл',
+  filtersLabel: 'Фильтры',
+  togglersPrefix: 'Переключить на режим',
   filters: [
     {
       name: 'crop',
-      value: 80,
+      value: 86,
       label: 'Обрезать'
     },
     {

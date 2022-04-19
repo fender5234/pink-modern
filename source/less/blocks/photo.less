@@ -1,0 +1,88 @@
+.photo {
+  position: relative;
+  line-height: 24px;
+  background-color: var(--color-lightgrey);
+}
+
+.photo__body {
+  margin: 0;
+}
+
+.photo__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px 20px 7px;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  background-color: var(--color-pink);
+}
+
+.photo__picture {
+  display: block;
+
+  &--panorama {
+    margin: 0 -20px;
+  }
+}
+
+.photo__content {
+  padding: 17px 11px 11px 17px;
+}
+
+.photo__quote {
+  margin: 0;
+}
+
+.photo__cite {
+  margin: 0;
+}
+
+.photo__author {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.photo__time {
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.photo__description {
+  margin: 0;
+}
+
+.photo__likes-form {
+  display: flex;
+  align-items: center;
+  padding: 0 13px 19px;
+  color: var(--color-pink);
+}
+
+.photo__likes {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.photo__like-submit {
+  margin-right: 15px;
+  color: var(--color-pink);
+  background-color: transparent;
+  border: none;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 12px;
+    background-color: currentColor;
+    mask-image: url("../img/icon-heart.svg");
+  }
+
+  .pink-states(var(--color-pink-60));
+}

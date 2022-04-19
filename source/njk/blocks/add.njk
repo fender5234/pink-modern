@@ -3,32 +3,41 @@
 
   <form class="add__form" action="{{ config.action }}" method="post">
     <p class="add__file">
-      <label class="visually-hidden" for="add">{{ data.add.fileLabel }}</label>
+      <label class="add__file-chooser" for="add">
+        <span class="visually-hidden">{{ data.add.fileLabel }}.</span>
+      </label>
       <input
         class="visually-hidden"
         id="add"
         name="image"
         type="file"
-        accept="image/jpeg,image/png"
+        accept="image/jpeg, image/png"
         required
       />
     </p>
 
-    {% for filter in data.add.filters %}
-      <p class="add__filter">
-        <label class="visually-hidden" for="{{ filter.name }}">{{ filter.label }}</label>
-        <input
-          class="visually-hidden"
-          id="{{ filter.name }}"
-          name="{{ filter.name }}"
-          type="range"
-          min="0"
-          max="100"
-          step="1"
-          value="{{ filter.value }}"
-        />
-      </p>
-    {% endfor %}
+    <fieldset class="add__filters">
+      <legend class="visually-hidden">{{ data.add.filtersLabel }}</legend>
+
+      {% for filter in data.add.filters %}
+        <p class="add__filter {{ 'add__filter--active' if loop.first }}">
+          <button class="add__filter-toggler add__filter-toggler--{{ filter.name }}" type="button">
+            <span class="visually-hidden">{{ data.add.togglersPrefix }} {{ filter.label }}.</span>
+          </button>
+          <label class="visually-hidden" for="{{ filter.name }}">{{ filter.label }}.</label>
+          <input
+            class="add__range"
+            id="{{ filter.name }}"
+            name="{{ filter.name }}"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="{{ filter.value }}"
+          />
+        </p>
+      {% endfor %}
+    </fieldset>
 
     <button class="add__button" type="submit">
       {{ data.add.submitTitle }}

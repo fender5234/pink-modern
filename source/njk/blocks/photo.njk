@@ -1,9 +1,13 @@
 <article class="photo">
   <h2 class="visually-hidden">{{ photo.heading }}.</h2>
 
-  <figure>
+  {% if photo.panorama %}
+    <p class="photo__label">{{ photo.panorama }}</p>
+  {% endif %}
+
+  <figure class="photo__body">
     {% set picture = {
-      mix: 'photo__picture',
+      mix: 'picture--fullwidth photo__picture' + (' photo__picture--panorama' if photo.panorama),
       src: photo.image,
       alt: photo.imageText
     } %}
@@ -13,7 +17,7 @@
       <blockquote class="photo__quote">
         <p class="photo__cite">
           <cite class="photo__author">{{ photo.author }}</cite>
-          <time class="photo__time" datetime="{{ photo.created }}">{{ photo.time }}</time>
+          <time class="photo__time" datetime="{{ photo.created }}">({{ photo.time }})</time>
         </p>
         <p class="photo__description">{{ photo.description }}</p>
       </blockquote>
@@ -21,9 +25,9 @@
   </figure>
 
   <form class="photo__likes-form" action="{{ config.action }}" method="post">
-    <p class="photo__likes">{{ photo.likes }}</p>
     <button class="photo__like-submit" type="submit" name="userId" value="{{ config.userId }}">
       <span class="visually-hidden">Поставить лайк.</span>
     </button>
+    <p class="photo__likes">Нравится: {{ photo.likes }}</p>
   </form>
 </article>

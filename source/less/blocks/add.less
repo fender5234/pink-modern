@@ -1,0 +1,148 @@
+.add {
+  padding: 20px 20px 29px;
+  background-color: var(--color-lightgrey);
+}
+
+.add__file {
+  margin: 0;
+}
+
+.add__file-chooser {
+  display: block;
+  max-width: 300px;
+  height: 374px;
+  margin: 0 auto;
+  background-image: url("../img/photo-add-mobile.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.add__filters {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -35px 0 38px -47px;
+  padding: 42px 0 73px;
+  border: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    left: -20px;
+    height: 1px;
+    background-color: var(--color-darkblue-10);
+  }
+}
+
+.add__filter {
+  margin: 35px 0 0 35px;
+}
+
+.add__filter-toggler {
+  padding: 0;
+  color: var(--color-darkblue-30);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--color-darkblue-50);
+  }
+
+  &:active {
+    color: var(--color-pink);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: currentColor;
+  }
+
+  &--crop::before {
+    width: 44px;
+    height: 44px;
+  }
+
+  &--pink::before {
+    width: 48px;
+    height: 43px;
+  }
+
+  &--contrast::before {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.add__range {
+  bottom: 28px;
+  left: 67px;
+  width: calc(100% - 87px);
+  height: 16px;
+  margin: 0;
+
+  .visually-hidden();
+}
+
+.add__filter--active {
+  .add__filter-toggler {
+    color: var(--color-pink);
+  }
+
+  .add__range {
+    position: absolute;
+    transform: none;
+  }
+}
+
+.add__button {
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 15px 40px 16px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  font-family: inherit;
+  text-align: center;
+  color: var(--color-pink);
+  background-color: transparent;
+  border: 3px solid var(--color-pink);
+  border-radius: 30px;
+  cursor: pointer;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-pink);
+  }
+
+  &:active {
+    color: var(--color-white-30);
+    background-color: var(--color-pink);
+  }
+
+  &--reset {
+    color: var(--color-darkblue-10);
+    border-color: var(--color-darkblue-10);
+
+    &:hover {
+      color: var(--color-darkblue-30);
+      background-color: transparent;
+      border-color: var(--color-darkblue-30);
+    }
+
+    &:active {
+      color: var(--color-white-30);
+      background-color: var(--color-darkblue-30);
+      border-color: transparent;
+    }
+  }
+}
