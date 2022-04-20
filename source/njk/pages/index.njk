@@ -13,7 +13,7 @@
     slot: 'reviews',
     togglers: {
       title: 'Отзыв',
-      length: data.reviews.list | length
+      length: data.reviews.list.length
     }
   } %}
   {% include 'blocks/slider.njk' %}
@@ -24,7 +24,7 @@
     slot: 'tariffs',
     togglers: {
       title: 'Тариф',
-      length: data.tariffs.list | length
+      length: data.tariffs.list.length
     },
     isTable: true
   } %}

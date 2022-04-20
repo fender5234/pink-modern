@@ -1,23 +1,8 @@
 <form class="form {{ mix }}" action="https://echo.htmlacademy.ru" method="post">
-  {% set mix = 'form__fields' %}
-  {% set fields = data.fio %}
-  {% include 'blocks/fields.njk' %}
-
-  {% set mix = 'form__checkers' %}
-  {% set checkers = data.achievements %}
-  {% include 'blocks/checkers.njk' %}
-
-  {% set mix = 'form__fields' %}
-  {% set fields = data.contacts %}
-  {% include 'blocks/fields.njk' %}
-
-  {% set mix = 'form__checkers' %}
-  {% set checkers = data.app %}
-  {% include 'blocks/checkers.njk' %}
-
-  {% set mix = 'form__fields' %}
-  {% set fields = data.message %}
-  {% include 'blocks/fields.njk' %}
+  {% for fieldset in data.fieldsets %}
+    {% set mix = 'form__fieldset' %}
+    {% include 'blocks/fieldset.njk' %}
+  {% endfor %}
 
   <button class="button form__submit" type="submit">Отправить форму</button>
 

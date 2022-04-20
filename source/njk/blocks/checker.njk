@@ -1,0 +1,13 @@
+<p class="checker {{ mix }}">
+  <input
+    class="checker__input checker__input--{{ type }}"
+    id="{{ id }}"
+    name="{{ name }}"
+    type="{{ type }}"
+    value="{{ checker.value }}"
+    {{ 'checked' if checker.checked }}
+  />
+  <label class="checker__label" for="{{ id }}">
+    {{ checker.title }}
+  </label>
+</p>

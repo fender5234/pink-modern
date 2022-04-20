@@ -1,0 +1,33 @@
+.field {
+  line-height: 30px;
+}
+
+.field__label {
+  display: block;
+  margin: 0 23px 6px;
+  color: var(--color-pink);
+  text-transform: uppercase;
+}
+
+.field__input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 14px 20px 15px;
+  font-size: 18px;
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: 2px solid var(--color-grey);
+  border-radius: 1px;
+
+  &--message {
+    min-height: 201px;
+    resize: none;
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
+}
