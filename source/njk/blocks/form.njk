@@ -4,9 +4,11 @@
     {% include 'blocks/fieldset.njk' %}
   {% endfor %}
 
-  <button class="button form__submit" type="submit">Отправить форму</button>
+  <footer class="form__footer">
+    <button class="button form__submit" type="submit">{{ data.content.submitText }}</button>
 
-  <p class="form__description">
-    <span class="form__sign">*</span> — обязательные поля
-  </p>
+    <p class="form__description">
+      <span class="form__sign">*</span> — {{ data.content.requiredFields }}
+    </p>
+  </footer>
 </form>

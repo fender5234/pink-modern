@@ -19,15 +19,26 @@
   font-family: inherit;
   color: inherit;
   border: 2px solid var(--color-grey);
-  border-radius: 1px;
-
-  &--message {
-    min-height: 201px;
-    resize: none;
-  }
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
 
   &::placeholder {
     color: inherit;
     opacity: 1;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--color-darkblue);
+  }
+
+  &:active {
+    border-color: var(--color-pink);
+  }
+
+  &--message {
+    min-height: 201px;
+    resize: none;
   }
 }

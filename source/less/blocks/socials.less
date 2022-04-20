@@ -11,11 +11,20 @@
 }
 
 .socials__link {
-  display: block;
+  display: flex;
   width: 48px;
   height: 48px;
   border: 3px solid var(--color-darkblue-10);
   border-radius: 50%;
+
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin: auto;
+    background-color: var(--color-pink);
+    transition: inherit;
+  }
 
   &:hover {
     border-color: var(--color-darkblue);
@@ -23,5 +32,21 @@
 
   &:active {
     border-color: var(--color-darkblue-10);
+
+    &::before {
+      background-color: var(--color-pink-30);
+    }
+  }
+
+  &--vkontakte::before {
+    mask-image: url("../img/icon-social-vkontakte.svg");
+  }
+
+  &--telegram::before {
+    mask-image: url("../img/icon-social-telegram.svg");
+  }
+
+  &--youtube::before {
+    mask-image: url("../img/icon-social-youtube.svg");
   }
 }

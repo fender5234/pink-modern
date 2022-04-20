@@ -1,0 +1,30 @@
+.button {
+  box-sizing: border-box;
+  padding: 16px 20px 17px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--color-white);
+  text-transform: uppercase;
+  background-color: var(--color-green);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-darkgreen);
+  }
+
+  &:active {
+    color: var(--color-white-30);
+    background-color: var(--color-darkgreen);
+  }
+
+  &:disabled {
+    color: var(--color-white);
+    background-color: var(--color-grey);
+    cursor: not-allowed;
+  }
+}
