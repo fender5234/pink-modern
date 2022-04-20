@@ -1,11 +1,3 @@
 {% extends 'layout.njk' %}
 
 {% set slot = 'form' %}
-
-{% block modal %}
-  {% set modal = data.success %}
-  {% include 'blocks/modal.njk' %}
-
-  {% set modal = data.error %}
-  {% include 'blocks/modal.njk' %}
-{% endblock %}

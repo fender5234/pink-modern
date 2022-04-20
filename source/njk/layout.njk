@@ -23,7 +23,11 @@
     {% set mix = 'page__footer' %}
     {% include 'blocks/page-footer.njk' %}
 
-    {% block modal %}{% endblock %}
+    {% block modal %}
+      {% for modal in data.modals %}
+        {% include 'blocks/modal.njk' %}
+      {% endfor %}
+    {% endblock %}
 
     <script>
       window.pinegladePP = {

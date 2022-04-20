@@ -1,0 +1,27 @@
+<fieldset class="fieldset fieldset--{{ fieldset.type }} {{ 'fieldset--checkers' if fieldset.checkers }} {{ mix }}">
+  <legend class="fieldset__title
+    {{ ' fieldset__title--tablet' if fieldset.hiddenTitleInMobile }}
+    {{ ' fieldset__title--alone' if fieldset.fields and fieldset.fields.length == 1 }}
+  ">
+    {{ fieldset.title }}
+  </legend>
+
+  {% for field in fieldset.fields %}
+    {% set mix = 'fieldset__field' %}
+    {% include 'blocks/field.njk' %}
+  {% endfor %}
+
+  {% if fieldset.checkers %}
+    <ul class="fieldset__list">
+      {% for checker in fieldset.checkers %}
+        <li class="fieldset__item">
+          {% set mix = 'fieldset__checker' %}
+          {% set id = fieldset.name + '-' + loop.index %}
+          {% set name = fieldset.name + ('[]' if fieldset.checkers.length > 1 and fieldset.type != 'radio') %}
+          {% set type = fieldset.type %}
+          {% include 'blocks/checker.njk' %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</fieldset>

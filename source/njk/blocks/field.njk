@@ -1,0 +1,24 @@
+{% macro attrs(field) %}
+  id="{{ field.name }}"
+  name="{{ field.name }}"
+  placeholder="{{ field.placeholder }}{{ ' *' if field.required }}"
+  {{ 'required' if field.required }}
+{% endmacro %}
+
+<p class="field {{ mix }}">
+  <label class="{{ 'visually-hidden' if field.hiddenTitle else 'field__label' }}" for="{{ field.name }}">
+    {{ field.title }}
+  </label>
+
+  {% if field.type == 'textarea' %}
+    <textarea class="field__input field__input--message" {{ attrs(field, loop.index) }}></textarea>
+  {% else %}
+    <input
+      class="field__input"
+      {{ attrs(field, loop.index) }}
+      type="{{ field.type or 'text' }}"
+      {{ 'value="' + field.value + '"' if field.value }}
+      {{ 'pattern="' + field.pattern + '"' if field.pattern }}
+    />
+  {% endif %}
+</p>

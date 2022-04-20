@@ -1,27 +1,14 @@
 <form class="form {{ mix }}" action="https://echo.htmlacademy.ru" method="post">
-  {% set mix = 'form__fields' %}
-  {% set fields = data.fio %}
-  {% include 'blocks/fields.njk' %}
+  {% for fieldset in data.fieldsets %}
+    {% set mix = 'form__fieldset' %}
+    {% include 'blocks/fieldset.njk' %}
+  {% endfor %}
 
-  {% set mix = 'form__checkers' %}
-  {% set checkers = data.achievements %}
-  {% include 'blocks/checkers.njk' %}
+  <footer class="form__footer">
+    <button class="button form__submit" type="submit">{{ data.content.submitText }}</button>
 
-  {% set mix = 'form__fields' %}
-  {% set fields = data.contacts %}
-  {% include 'blocks/fields.njk' %}
-
-  {% set mix = 'form__checkers' %}
-  {% set checkers = data.app %}
-  {% include 'blocks/checkers.njk' %}
-
-  {% set mix = 'form__fields' %}
-  {% set fields = data.message %}
-  {% include 'blocks/fields.njk' %}
-
-  <button class="button form__submit" type="submit">Отправить форму</button>
-
-  <p class="form__description">
-    <span class="form__sign">*</span> — обязательные поля
-  </p>
+    <p class="form__description">
+      <span class="form__sign">*</span> — {{ data.content.requiredFields }}
+    </p>
+  </footer>
 </form>

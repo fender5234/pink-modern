@@ -6,7 +6,7 @@
   <b class="content__lead">{{ data.content.prepend }}</b>
 
   {% if slot %}
-    {% set mix = 'content__slot' %}
+    {% set mix = 'content__slot content__slot--' + slot %}
     {% include 'blocks/' + slot + '.njk' %}
   {% endif %}
 
