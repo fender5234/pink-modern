@@ -1,4 +1,4 @@
-import { isEscapeKeyPressed } from '../util.js';
+import { isEscapeKeyPressed } from '../common/util.js';
 
 const FOCUSABLES = [
   'a[href]',
