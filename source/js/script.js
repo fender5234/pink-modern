@@ -1,11 +1,14 @@
 import Slider from './blocks/slider.js';
 import PageHeader from './blocks/page-header.js';
 import Add from './blocks/add.js';
+import Form from './blocks/form.js';
+import Viewport from './blocks/viewport.js';
+import { setupBlocks } from './util.js';
 
-const setupBlocks = (selector, Block) => {
-  document.querySelectorAll(selector).forEach((element) => new Block(element));
-};
-
-setupBlocks('.slider', Slider);
-setupBlocks('.page-header', PageHeader);
-setupBlocks('.add', Add);
+[
+  ['.slider', Slider],
+  ['.page-header', PageHeader],
+  ['.add', Add],
+  ['.form', Form],
+  ['.viewport[id]', Viewport]
+].forEach(setupBlocks);

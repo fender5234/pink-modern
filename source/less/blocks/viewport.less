@@ -1,0 +1,31 @@
+.viewport {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow-y: scroll;
+
+  &--page,
+  &:target {
+    display: flex;
+  }
+}
+
+.viewport__modal {
+  position: relative;
+  margin: auto;
+}
+
+.viewport__back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+}

@@ -1,8 +1,8 @@
-<section class="modal">
+<section class="modal {{ mix }}">
   <h2 class="modal__title">{{ modal.title }}</h2>
   <p class="modal__text">{{ modal.text }}</p>
 
-  <footer class="modal__footer {{ 'modal__footer--alter' if modal.alter }}">
-    <button class="button modal__button" type="button">{{ modal.buttonText }}</button>
+  <footer class="modal__footer modal__footer--{{ modal.id }}">
+    <a class="button modal__button" href="#">{{ modal.buttonText }}</a>
   </footer>
 </section>
