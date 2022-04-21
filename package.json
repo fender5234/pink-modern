@@ -24,6 +24,7 @@
     "postcss-bem-linter": "3.3.0",
     "postcss-less": "6.0.0",
     "postcss-reporter": "7.0.5",
+    "pre-commit": "1.2.2",
     "stylelint": "13.13.1",
     "stylelint-config-htmlacademy": "0.1.11",
     "stylelint-order-htmlacademy": "2.0.6",
@@ -55,5 +56,6 @@
   "engines": {
     "node": "^16"
   },
-  "type": "module"
+  "type": "module",
+  "pre-commit": "test"
 }
