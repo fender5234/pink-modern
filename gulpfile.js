@@ -37,7 +37,7 @@ export const testEditorconfig = () => src(editorconfigSources)
   .pipe(checkLintspaces())
   .pipe(lintspaces.reporter());
 
-export const styles = () => src('source/less/style.less', { sourcemaps: true })
+export const styles = () => src('source/less/*.less', { sourcemaps: true })
   .pipe(less())
   .pipe(postcss([
     autoprefixer()
