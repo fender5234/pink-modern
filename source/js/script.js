@@ -3,7 +3,7 @@ import PageHeader from './blocks/page-header.js';
 import Add from './blocks/add.js';
 import Form from './blocks/form.js';
 import Viewport from './blocks/viewport.js';
-import { setupBlocks } from './util.js';
+import { setupBlocks } from './common/util.js';
 
 [
   ['.slider', Slider],

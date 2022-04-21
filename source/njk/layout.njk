@@ -29,10 +29,10 @@
       {% for modal in data.modals %}
         <div class="viewport" id="{{ modal.id }}">
           <a class="viewport__back" href="#">
-            <span class="visually-hidden">{{ viewportCloseText }}.</span>
+            <span class="visually-hidden">{{ config.viewportCloseText }}.</span>
           </a>
 
-          {% set mix = 'viewport__modal' %}
+          {% set mix = 'viewport__modal' +  (' viewport__modal--test' if modal.test) %}
           {% include 'blocks/modal.njk' %}
         </div>
       {% endfor %}

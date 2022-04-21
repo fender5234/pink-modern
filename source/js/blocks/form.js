@@ -1,4 +1,4 @@
-import { getData } from '../util.js';
+import { getData } from '../common/util.js';
 
 export default class Form {
   constructor(formElement) {
