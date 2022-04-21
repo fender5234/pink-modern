@@ -9,23 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body class="page">
-    {% set mix = 'page__header' %}
-    {% include 'blocks/page-header.njk' %}
+  <body>
+    <div class="page viewport viewport--page">
+      {% set mix = 'page__header' %}
+      {% include 'blocks/page-header.njk' %}
 
-    <main class="page-main page__main">
-      {% block main %}
-        {% set mix = 'page-main__content' %}
-        {% include 'blocks/content.njk' %}
-      {% endblock %}
-    </main>
+      <main class="page-main page__main">
+        {% block main %}
+          {% set mix = 'page-main__content' %}
+          {% include 'blocks/content.njk' %}
+        {% endblock %}
+      </main>
 
-    {% set mix = 'page__footer' %}
-    {% include 'blocks/page-footer.njk' %}
+      {% set mix = 'page__footer' %}
+      {% include 'blocks/page-footer.njk' %}
+    </div>
 
     {% block modal %}
       {% for modal in data.modals %}
-        {% include 'blocks/modal.njk' %}
+        <div class="viewport" id="{{ modal.id }}">
+          <a class="viewport__back" href="#">
+            <span class="visually-hidden">{{ viewportCloseText }}.</span>
+          </a>
+
+          {% set mix = 'viewport__modal' %}
+          {% include 'blocks/modal.njk' %}
+        </div>
       {% endfor %}
     {% endblock %}
 
