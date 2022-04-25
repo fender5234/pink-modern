@@ -39,8 +39,17 @@
     {% endblock %}
 
     <script>
+      {% if page === 'success' %}
+        {% set selector = '#success' %}
+      {% elif page === 'error' %}
+        {% set selector = '#error' %}
+      {% else %}
+        {% set selector = '.viewport--page' %}
+      {% endif %}
+
       window.pinegladePP = {
-        breakpoints: [320, 660, 1200]
+        breakpoints: [320, 660, 1200],
+        selector: '{{ selector }}'
       };
     </script>
     <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>

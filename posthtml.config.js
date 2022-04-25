@@ -3,9 +3,9 @@ const parser = require('posthtml-parser');
 const nunjucks = require('nunjucks');
 const { getPosthtmlW3c } = require('pineglade-w3c');
 
-const isDev = process.env.NODE_ENV === 'development';
+const IS_DEV = process.env.NODE_ENV === 'development';
 
-const getPageName = (tree) => tree.options.from
+const getPageName = (filename) => filename
   .replace(/^.*pages(\\+|\/+)(.*)\.njk$/, '$2')
   .replace(/\\/g, '/');
 
@@ -16,13 +16,15 @@ module.exports = () => ({
       nunjucks.configure('source/njk', { autoescape: false });
 
       return parser(nunjucks.renderString(render(tree), {
-        isDev,
-        page: getPageName(tree)
+        IS_DEV,
+        page: getPageName(tree.options.from)
       }));
     })(),
     require('htmlnano')({ collapseWhitespace: 'aggressive' }),
     getPosthtmlW3c({
-      getSourceName: (tree) => `${getPageName(tree)}.html`
+      exit: !IS_DEV,
+      forceOffline: true,
+      getSourceName: (filename) => `${getPageName(filename)}.html`
     })
   ]
 });
