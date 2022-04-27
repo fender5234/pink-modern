@@ -13,6 +13,7 @@
     "gulp": "4.0.2",
     "gulp-eslint": "6.0.0",
     "gulp-html-bem-validator": "1.0.5",
+    "gulp-if": "3.0.0",
     "gulp-less": "5.0.0",
     "gulp-lintspaces": "1.0.1",
     "gulp-postcss": "9.0.1",

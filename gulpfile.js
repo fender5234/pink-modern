@@ -1,17 +1,18 @@
+import autoprefixer from 'autoprefixer';
 import bemValidator from 'gulp-html-bem-validator';
 import browser from 'browser-sync';
-import gulp from 'gulp';
-import lintspaces from 'gulp-lintspaces';
 import eslint from 'gulp-eslint';
-import posthtml from 'gulp-posthtml';
-import rename from 'gulp-rename';
+import gulp from 'gulp';
+import gulpIf from 'gulp-if';
 import less from 'gulp-less';
 import lessSyntax from 'postcss-less';
+import lintspaces from 'gulp-lintspaces';
 import postcss from 'gulp-postcss';
-import autoprefixer from 'autoprefixer';
-import stylelint from 'stylelint';
 import postcssBemLinter from 'postcss-bem-linter';
 import postcssReporter from 'postcss-reporter';
+import posthtml from 'gulp-posthtml';
+import rename from 'gulp-rename';
+import stylelint from 'stylelint';
 
 const { src, dest, watch, series, parallel } = gulp;
 const checkLintspaces = () => lintspaces({
@@ -31,7 +32,7 @@ export const buildHTML = () => src('source/njk/pages/**/*.njk')
   .pipe(posthtml())
   .pipe(bemValidator())
   .pipe(rename({ extname: '.html' }))
-  .pipe(dest('source'));
+  .pipe(gulpIf(process.env.NODE_ENV !== 'test', dest('source')));
 
 export const testEditorconfig = () => src(editorconfigSources)
   .pipe(checkLintspaces())
@@ -90,6 +91,6 @@ const watcher = () => {
 };
 
 export const build = parallel(buildHTML, styles);
-export const test = parallel(testEditorconfig, testStyles, testScripts);
+export const test = parallel(buildHTML, testEditorconfig, testStyles, testScripts);
 
 export default series(test, build, server, watcher);
