@@ -17,7 +17,8 @@ module.exports = () => ({
 
       return parser(nunjucks.renderString(render(tree), {
         IS_DEV,
-        page: getPageName(tree.options.from)
+        page: getPageName(tree.options.from),
+        ver: IS_DEV ? `?${Date.now()}` : null
       }));
     })(),
     require('htmlnano')({ collapseWhitespace: 'aggressive' }),
