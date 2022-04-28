@@ -4,11 +4,9 @@ export default class PageHeader {
     this._togglerElement = pageHeaderElement.querySelector('.page-header__toggler');
     this._navElement = pageHeaderElement.querySelector('.page-header__nav');
 
-    const [openTextElement, closeTextElement] = this._togglerElement.querySelectorAll('span');
-    this._openTextElement = openTextElement;
-    this._closeTextElement = closeTextElement;
-
     this._setListeners();
+
+    this._pageHeaderElement.classList.add('page-header--js');
   }
 
   _setListeners() {
@@ -20,8 +18,15 @@ export default class PageHeader {
   _clickHandler(evt) {
     evt.preventDefault();
 
-    this._pageHeaderElement.classList.toggle('page-header--opened');
-    this._openTextElement.hidden = !this._openTextElement.hidden;
-    this._closeTextElement.hidden = !this._closeTextElement.hidden;
+    if (!this._pageHeaderElement.classList.contains('page-header--opened')) {
+      this._pageHeaderElement.classList.add('page-header--opened');
+      this._pageHeaderElement.classList.remove('page-header--closed');
+    } else {
+      this._pageHeaderElement.classList.remove('page-header--opened');
+      this._pageHeaderElement.classList.add('page-header--closed');
+    }
+
+    const expanded = this._togglerElement.getAttribute('aria-expanded');
+    this._togglerElement.setAttribute('aria-expanded', expanded !== 'true');
   }
 }

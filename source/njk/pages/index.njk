@@ -1,9 +1,11 @@
-{% extends 'layout.njk' %}
+{% extends 'common/layout.njk' %}
 
-{% block main %}
+{% block header %}
   {% set mix = 'page-main__promo' %}
   {% include 'blocks/promo.njk' %}
+{% endblock %}
 
+{% block main %}
   {% set mix = 'page-main__features' %}
   {% include 'blocks/features.njk' %}
 

@@ -3,12 +3,11 @@
   flex-direction: column;
 }
 
-.page__header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
+.page__header,
+.page__main,
+.page__footer {
+  box-sizing: border-box;
+  min-width: 320px;
 }
 
 .page__main {

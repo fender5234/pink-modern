@@ -1,7 +1,5 @@
 <section class="content {{ mix }}">
-  <header class="content__header">
-    <h1 class="content__heading">{{ data.content.heading or data.title }}</h1>
-  </header>
+  <h2 class="visually-hidden">{{ data.content.subheading or data.content.heading or data.title }}.</h2>
 
   <b class="content__lead">{{ data.content.prepend }}</b>
 

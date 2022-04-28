@@ -1,14 +1,21 @@
 <header class="page-header {{ mix }}">
-  <p class="page-header__top">
+  <div class="page-header__top">
     {% set mix = 'page-header__logo' %}
     {% include 'blocks/logo.njk' %}
 
-    <a class="page-header__toggler" href="#!">
-      <span class="visually-hidden">{{ config.menu.labelToOpen }}.</span>
-      <span class="visually-hidden" hidden>{{ config.menu.labelToClose }}.</span>
-    </a>
-  </p>
+    <button class="page-header__toggler" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="visually-hidden">{{ config.menu.label }}.</span>
+    </button>
+  </div>
 
   {% set mix = 'page-header__nav' %}
   {% include 'blocks/nav.njk' %}
+
+  {% if data.promo %}
+    {% set mix = 'page-header__promo' %}
+    {% include 'blocks/promo.njk' %}
+  {% else %}
+    {% set mix = 'page-header__page-heading' %}
+    {% include 'blocks/page-heading.njk' %}
+  {% endif %}
 </header>

@@ -1,23 +1,38 @@
+.page-header__back() {
+  background-image: url("../img/back-header-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+
+  @media @mobile-no-xs {
+    background-image: url("../img/back-header-tablet.jpg");
+  }
+}
+
 .page-header {
   color: var(--color-white);
+  background-color: var(--color-darkblue);
 }
 
 .page-header__top {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
   padding: 21px 20px 18px;
-  background-color: var(--color-black-30);
-  transition: background-color 0.3s 0.2s ease-in-out;
+  background-color: inherit;
 }
 
 .page-header__toggler {
-  display: flex;
+  display: none;
   width: 50px;
   height: 24px;
   margin-bottom: 3px;
+  padding: 0;
   color: var(--color-white);
+  background-color: transparent;
+  border: none;
 
   &:hover {
     color: var(--color-pink);
@@ -40,21 +55,50 @@
 }
 
 .page-header__nav {
-  position: absolute;
-  top: -100vh;
-  right: 0;
-  left: 0;
-  z-index: -1;
   background-color: var(--color-darkblue);
   border-top: 2px solid var(--color-darkblue);
-  visibility: hidden;
-  transition: top 0.3s ease-out, visibility 0.3s;
+}
+
+.page-header__promo {
+  .page-header__back();
+}
+
+.page-header__page-heading {
+  min-height: 99px;
+
+  .page-header__back();
+}
+
+.page-header--js {
+  .page-header__back();
+
+  .page-header__top {
+    background-color: var(--color-black-30);
+  }
+
+  .page-header__toggler {
+    display: flex;
+  }
+
+  .page-header__nav {
+    position: absolute;
+    top: -100%;
+    right: 0;
+    left: 0;
+    visibility: hidden;
+    transition: top 0.3s ease-out, visibility 0.3s;
+  }
+
+  .page-header__promo,
+  .page-header__page-heading {
+    background-image: none;
+  }
 }
 
 .page-header--opened {
   .page-header__top {
     background-color: var(--color-darkblue);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 
   .page-header__toggler {
@@ -68,8 +112,14 @@
   }
 
   .page-header__nav {
-    top: 100%;
+    top: 66px;
     visibility: visible;
     transition-timing-function: ease-in;
+  }
+}
+
+.page-header--closed {
+  .page-header__top {
+    transition: background-color 0.3s 0.1s ease-in-out;
   }
 }
