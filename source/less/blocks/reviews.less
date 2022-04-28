@@ -8,17 +8,46 @@
   padding: 41px 20px 24px;
   line-height: 30px;
   text-align: center;
+
+  @media @tablet-desktop {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
 }
 
 .reviews__author {
   display: block;
-  margin-bottom: 13px;
+  margin: 0 0 13px;
+  font-style: normal;
+
+  @media @tablet-desktop {
+    margin: 35px 0 0;
+  }
+}
+
+.reviews__author-name {
+  display: block;
   font-weight: 700;
   font-size: 18px;
   color: var(--color-black);
-  font-style: normal;
+
+  @media @tablet-desktop {
+    font-size: 20px;
+  }
+}
+
+.reviews__author-note {
+  @media @mobile {
+    .sr-only();
+  }
 }
 
 .reviews__text {
   margin: 0;
+
+  @media @tablet-desktop {
+    order: -1;
+    font-size: 18px;
+  }
 }

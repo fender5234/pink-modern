@@ -7,7 +7,7 @@
   </div>
 
   {% set togglers = {
-    mix: 'slider__togglers',
+    mix: 'slider__togglers' + (' slider__togglers--table' if slider.isTable),
     title: slider.togglers.title,
     length: slider.togglers.length,
     activeIndex: 2 if slider.isTable else 1

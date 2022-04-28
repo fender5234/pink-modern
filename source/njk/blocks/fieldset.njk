@@ -1,6 +1,6 @@
 <fieldset class="fieldset fieldset--{{ fieldset.type }} {{ 'fieldset--checkers' if fieldset.checkers }} {{ mix }}">
   <legend class="fieldset__title
-    {{ ' fieldset__title--tablet' if fieldset.hiddenTitleInMobile }}
+    {{ ' fieldset__title--mobile-hidden' if fieldset.hiddenTitleInMobile }}
     {{ ' fieldset__title--alone' if fieldset.fields and fieldset.fields.length == 1 }}
   ">
     {{ fieldset.title }}

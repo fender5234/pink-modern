@@ -1,11 +1,12 @@
 .tariffs {
   border-spacing: 0;
   line-height: 30px;
-  text-transform: uppercase;
 }
 
 .tariffs__empty {
-  display: none;
+  @media @mobile {
+    display: none;
+  }
 }
 
 .tariffs__name {
@@ -15,7 +16,13 @@
   font-size: 16px;
   text-align: center;
   color: var(--color-white);
+  text-transform: uppercase;
   background-color: var(--color-darkblue);
+
+  @media @tablet-desktop {
+    width: 25%;
+    padding: 12px 36px 10px;
+  }
 
   &--central {
     position: relative;
@@ -33,6 +40,10 @@
 
     &::before {
       left: 0;
+
+      @media @tablet-desktop {
+        z-index: 1; // Чтобы закрыть красный лейбл, как на макете
+      }
     }
 
     &::after {
@@ -60,8 +71,19 @@
   box-sizing: border-box;
   width: calc(100vw - var(--scrollbar-width) - 40px);
   padding: 13px 20px 16px;
+  font-weight: 400;
+  text-align: left;
   background-color: var(--color-white);
   border-bottom: 2px solid var(--color-grey);
+
+  @media @mobile {
+    padding-right: 64px;
+  }
+
+  @media @tablet-desktop {
+    width: 25%;
+    padding: 7px 15px 8px;
+  }
 
   &--central {
     border-right: 2px solid var(--color-grey);
@@ -69,7 +91,11 @@
   }
 
   &:first-child {
-    display: none;
+    border-left: 2px solid var(--color-grey);
+
+    @media @mobile {
+      display: none;
+    }
   }
 
   &:nth-child(2) {
@@ -81,17 +107,52 @@
   }
 
   &::before {
-    content: attr(data-title);
+    @media @mobile {
+      content: attr(data-title);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.tariffs__details {
+  &:first-child .tariffs__detail {
+    &:first-child {
+      position: relative;
+    }
+
+    &:first-child::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      left: -2px;
+      height: 2px;
+      background-color: var(--color-grey);
+      border-top-left-radius: 6px;
+    }
+  }
+
+  &:last-child .tariffs__detail {
+    &:first-child {
+      border-bottom-left-radius: 3px;
+    }
+
+    &:nth-child(2) {
+      @media @mobile {
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 3px;
+    }
   }
 }
 
 .tariffs__value {
-  position: absolute;
-  top: 16px;
-  right: 17px;
   width: 31px;
   height: 27px;
-  margin: 0;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 
@@ -101,5 +162,11 @@
 
   &--no {
     background-image: url("../img/icon-no.svg");
+  }
+
+  @media @mobile {
+    position: absolute;
+    top: 16px;
+    right: 17px;
   }
 }

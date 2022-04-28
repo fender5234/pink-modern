@@ -1,5 +1,9 @@
 .features {
   padding: 41px 0 0;
+
+  @media @tablet-desktop {
+    padding-top: 46px;
+  }
 }
 
 .features__lead {
@@ -8,14 +12,33 @@
   font-weight: 300;
   font-size: 24px;
   text-align: center;
+
+  @media @tablet-desktop {
+    font-size: 40px;
+    line-height: 1.36175;
+  }
+
+  &:nth-last-of-type(n + 2) {
+    @media @tablet-desktop {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .features__list {
+  position: relative;
   margin: 0;
   padding: 0 20px;
   line-height: 24px;
   text-align: center;
   background-color: var(--color-lightgrey);
+
+  @media @tablet {
+    min-height: 370px;
+    padding-bottom: 43px;
+    overflow: hidden;
+    text-align: left;
+  }
 
   &::before {
     content: "";
@@ -24,12 +47,25 @@
     margin: 0 -20px 50px;
     background-color: var(--color-white);
     clip-path: polygon(0 0, 100% 0, 0 100%);
+
+    @media @tablet-desktop {
+      height: 50px;
+      margin-bottom: 25px;
+    }
   }
 }
 
 .features__item {
+  @media @tablet-desktop {
+    margin-left: 310px;
+  }
+
   & + & {
     margin-top: 31px;
+
+    @media @tablet-desktop {
+      margin-top: 34px;
+    }
   }
 
   &::after {
@@ -38,6 +74,10 @@
     margin-top: 41px;
     background-repeat: no-repeat;
     background-position: 50% 0;
+
+    @media @tablet-desktop {
+      margin-top: 0;
+    }
   }
 
   &--1::after {
@@ -50,6 +90,15 @@
 
   &--3::after {
     background-image: url("../img/back-feature-3.png");
+
+    @media @tablet {
+      position: absolute;
+      top: 4px;
+      left: 20px;
+      width: 268px;
+      height: 482px;
+      background-size: cover;
+    }
   }
 
   &:last-child::after {

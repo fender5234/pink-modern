@@ -1,33 +1,11 @@
 {% set title = 'Главная' %}
 
 {% set promo = {
-  lead: 'Взгляните на жизнь иначе!',
+  lead: 'Взгляните на&nbsp;жизнь иначе!',
   downloadTItle: 'Скачать приложение',
-  description: 'Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8',
+  description: 'Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8',
   image: 'promo-mobile.png',
   imageText: 'Телефон с запущенным приложением в руке пользователя'
-} %}
-
-{% set features = {
-  heading: 'Особенности',
-  leads: [
-    'Устали от серости мегаполиса?',
-    'Нам есть, что вам предложить!'
-  ],
-  list: [
-    {
-      title: 'Поднимает настроение',
-      description: 'Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!'
-    },
-    {
-      title: 'Меняет мир вокруг',
-      description: 'Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект'
-    },
-    {
-      title: 'Заводит новых друзей',
-      description: 'Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых'
-    }
-  ]
 } %}
 
 {% set markets = [
@@ -48,19 +26,52 @@
   }
 ] %}
 
+{% set features = {
+  heading: 'Особенности',
+  leads: [
+    'Устали от серости мегаполиса?',
+    'Нам есть, что вам<br>предложить!'
+  ],
+  list: [
+    {
+      title: 'Поднимает настроение',
+      description: 'Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!'
+    },
+    {
+      title: 'Меняет мир вокруг',
+      description: 'Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить&nbsp;эффект'
+    },
+    {
+      title: 'Заводит новых друзей',
+      description: 'Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых'
+    }
+  ]
+} %}
+
+{% set announce = {
+  id: 'effect',
+  title: 'Эффект на&nbsp;24&nbsp;часа!',
+  description: 'Британские ученые провели исследования и доказали, что положительный эффект от&nbsp;использования приложения длится целые сутки!',
+  url: '#!',
+  linkText: 'Узнать больше об исследовании'
+} %}
+
 {% set reviews = {
   heading: 'Отзывы',
   list: [
     {
       author: 'Николай Петров',
+      about: '25 лет, водитель трамвая',
       text: '«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»'
     },
     {
       author: 'Иван Николаев',
+      about: '44 лет, водитель трамвая',
       text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur repellendus eos omnis neque corporis, odio dolorum at quo sed. Maiores blanditiis labore iste, doloremque eum ab? Ratione architecto quasi necessitatibus.'
     },
     {
       author: 'Баба Нюра',
+      about: '115 лет, водитель трамвая',
       text: 'Aspernatur repellendus eos omnis neque corporis, odio dolorum at quo sed. Maiores blanditiis labore iste, doloremque eum ab? Ratione architecto quasi necessitatibus.'
     }
   ]

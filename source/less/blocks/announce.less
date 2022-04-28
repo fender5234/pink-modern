@@ -1,0 +1,39 @@
+.announce {
+  padding: 95px 34px 85px 330px;
+  background-repeat: no-repeat;
+  background-position: 20px 54px;
+
+  @media @mobile {
+    .sr-only();
+  }
+
+  &--effect {
+    @media @tablet-desktop {
+      background-image: url("../img/icon-effect.svg");
+    }
+  }
+}
+
+.announce__title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--color-black);
+}
+
+.announce__description {
+  margin: 0 0 14px;
+  line-height: 24px;
+}
+
+.announce__link {
+  color: var(--color-pink);
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:active {
+    color: var(--color-darkblue-30);
+  }
+}
