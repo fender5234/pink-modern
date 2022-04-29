@@ -1,4 +1,3 @@
-import { TABLET_BREAKPOINT } from '../common/const.js';
 import Togglers from './togglers.js';
 
 export default class Slider {
@@ -11,7 +10,7 @@ export default class Slider {
 
     this._setListeners();
 
-    this._togglerComponent.init(window.innerWidth < TABLET_BREAKPOINT);
+    this._togglerComponent.init();
   }
 
   _setListeners() {
@@ -26,6 +25,6 @@ export default class Slider {
   }
 
   _slide() {
-    this._sliderElement.style.transform = `translateX(-${this._translateCoeff * (this._index - 1)}%)`;
+    this._sliderElement.style.setProperty('--slide', `translateX(-${this._translateCoeff * (this._index - 1)}%)`);
   }
 }

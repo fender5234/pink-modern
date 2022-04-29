@@ -12,11 +12,7 @@ export default class Togglers {
     return this._togglerElements.length;
   }
 
-  init(flag = false) {
-    if (!flag) {
-      return;
-    }
-
+  init() {
     const activeElement = this._togglerWrapperElement.querySelector('[data-active]');
     if (activeElement) {
       activeElement.click();

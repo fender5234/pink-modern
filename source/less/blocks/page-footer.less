@@ -1,15 +1,35 @@
 .page-footer {
+  display: grid;
+  gap: 38px;
+  justify-content: center;
+  align-items: center;
   padding: 40px 20px;
-  text-align: center;
+
+  @media @tablet-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 36px 20px;
+  }
 }
 
 .page-footer__logo {
-  display: table;
   min-height: 40px;
-  margin: 0 auto 38px;
   outline: 2px solid var(--color-pink);
+
+  @media @tablet-desktop {
+    align-self: start;
+    justify-self: start;
+  }
 }
 
 .page-footer__socials {
-  margin: -9px 0 38px -9px;
+  margin: -9px 0 0 -9px;
+}
+
+.page-footer__logo-dev {
+  margin: auto;
+
+  @media @tablet-desktop {
+    justify-self: end;
+    margin-right: 0;
+  }
 }

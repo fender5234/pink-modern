@@ -1,12 +1,13 @@
 .slider {
   --count: 3;
+  --slide: none;
   padding: 0 0 30px;
 
   @media @tablet-desktop {
     padding-bottom: 7px;
   }
 
-  &--alter {
+  &--table {
     padding-bottom: 39px;
     background-color: var(--color-lightgrey);
 
@@ -45,12 +46,14 @@
   grid-template-columns: repeat(var(--count), 1fr);
   width: 300%;
   margin: 0;
-  transition: transform 0.3s ease-in-out;
+  transform: var(--slide);
+  transition: transform 0.3s ease-in;
 }
 
 .slider__table {
   margin: 0 20px 33px;
-  transition: transform 0.3s ease-in-out;
+  transform: var(--slide);
+  transition: transform 0.3s ease-in;
 
   @media @mobile {
     width: calc(300% - 120px);
@@ -61,6 +64,7 @@
     width: calc(100% - 44px);
     margin-right: 22px;
     margin-left: 22px;
+    transform: none;
   }
 }
 

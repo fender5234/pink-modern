@@ -5,13 +5,14 @@
 
   <dl class="contacts__list">
     {% for link in data.contacts.list %}
-      <dt class="contacts__item">{{ link.title }}:</dt>
-      <dd class="contacts__description">
-        <a class="contacts__link" href="{{ link.href }}">{{ link.description }}</a>
-        {% if link.map %}
-          <div class="contacts__map"></div>
-        {% endif %}
-      </dd>
+      <div class="contacts__item">
+        <dt class="contacts__title">{{ link.title }}:</dt>
+        <dd class="contacts__description">
+          <a class="contacts__link" href="{{ link.href }}">{{ link.description }}</a>
+        </dd>
+      </div>
     {% endfor %}
   </dl>
+
+  <div class="contacts__map"></div>
 </footer>

@@ -1,46 +1,5 @@
 .promo {
   position: relative;
-  padding: 23px 0 0;
-
-  @media @tablet-desktop {
-    padding-top: 94px;
-    padding-bottom: 83px;
-  }
-}
-
-.promo__lead {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 0 20px 29px;
-  font-weight: 300;
-  font-size: 24px;
-  text-align: center;
-
-  @media @tablet-desktop {
-    width: 300px;
-    padding-bottom: 2px;
-    font-size: 40px;
-  }
-}
-
-.promo__picture {
-  display: table;
-  margin: 0 auto;
-
-  @media @tablet-desktop {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-
-    img {
-      width: 550px; // TEMP
-    }
-  }
-}
-
-.promo__content {
-  position: relative;
   z-index: 1;
   padding: 28px 20px 31px;
   color: var(--color-white);
@@ -58,7 +17,7 @@
   padding: 15px 20px 16px;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1;
+  line-height: 18px;
   text-align: center;
   text-decoration: none;
   border: 3px solid var(--color-white);
@@ -74,6 +33,12 @@
   @media @tablet-desktop {
     margin-bottom: 36px;
   }
+
+  @media @desktop {
+    margin-bottom: 57px;
+    padding-top: 16px;
+    font-size: 21px;
+  }
 }
 
 .promo__markets {
@@ -81,6 +46,10 @@
 
   @media @tablet-desktop {
     margin-bottom: 22px;
+  }
+
+  @media @desktop {
+    margin-bottom: 42px;
   }
 }
 

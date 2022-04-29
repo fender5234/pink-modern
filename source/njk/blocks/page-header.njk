@@ -1,21 +1,37 @@
 <header class="page-header {{ mix }}">
   <div class="page-header__top">
-    {% set mix = 'page-header__logo' %}
-    {% include 'blocks/logo.njk' %}
+    <div class="page-header__inner">
+      {% set mix = 'page-header__logo' %}
+      {% include 'blocks/logo.njk' %}
 
-    <button class="page-header__toggler" type="button" aria-expanded="false" aria-controls="nav-menu">
-      <span class="visually-hidden">{{ config.menu.label }}.</span>
-    </button>
+      <button class="page-header__toggler" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="visually-hidden">{{ config.menu.label }}.</span>
+      </button>
+
+      {% set mix = 'page-header__nav' %}
+      {% include 'blocks/nav.njk' %}
+    </div>
   </div>
 
-  {% set mix = 'page-header__nav' %}
-  {% include 'blocks/nav.njk' %}
+  <div class="page-header__bottom">
+    {% if data.promo %}
+      <h1 class="visually-hidden">{{ config.projectName }}.</h1>
 
-  {% if data.promo %}
-    {% set mix = 'page-header__promo' %}
-    {% include 'blocks/promo.njk' %}
-  {% else %}
-    {% set mix = 'page-header__page-heading' %}
-    {% include 'blocks/page-heading.njk' %}
-  {% endif %}
+      <div class="page-header__collage">
+        <b class="page-header__lead">{{ data.promo.lead }}</b>
+
+        {% set picture = {
+          mix: 'page-header__picture',
+          src: data.promo.image,
+          alt: data.promo.imageText
+        } %}
+        {% include 'blocks/picture.njk' %}
+      </div>
+
+      {% set mix = 'page-header__promo' %}
+      {% include 'blocks/promo.njk' %}
+    {% else %}
+      <h1 class="page-header__heading">{{ data.content.heading or data.title }}</h1>
+    {% endif %}
+  </div>
 </header>

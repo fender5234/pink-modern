@@ -24,9 +24,10 @@
   {% include 'blocks/slider.njk' %}
 
   {% set slider = {
-    mix: 'slider--alter page-main__tariffs',
+    mix: 'page-main__tariffs',
     heading: data.tariffs.heading,
     slot: 'tariffs',
+    activeIndex: data.tariffs.activeIndex,
     togglers: {
       title: 'Тариф',
       length: data.tariffs.list.length
