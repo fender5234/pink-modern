@@ -1,7 +1,9 @@
-<section class="announce announce--{{ data.announce.id }} {{ mix }}">
-  <h2 class="announce__title">{{ data.announce.title }}</h2>
+<section class="announce {{ mix }}">
+  <div class="announce__inner announce__inner--{{ data.announce.id }}">
+    <h2 class="announce__title">{{ data.announce.title }}</h2>
 
-  <p class="announce__description">{{ data.announce.description }}</p>
+    <p class="announce__description">{{ data.announce.description }}</p>
 
-  <a class="announce__link" href="#!">{{ data.announce.linkText }}</a>
+    <a class="announce__link" href="#!">{{ data.announce.linkText }}</a>
+  </div>
 </section>

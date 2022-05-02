@@ -1,6 +1,7 @@
 .slider {
   --count: 3;
   --slide: none;
+  position: relative;
   padding: 0 0 30px;
 
   @media @tablet-desktop {
@@ -12,7 +13,11 @@
     background-color: var(--color-lightgrey);
 
     @media @tablet-desktop {
-      padding-bottom: 35px;
+      padding-bottom: 36px;
+    }
+
+    @media @desktop {
+      padding-bottom: 62px;
     }
 
     &::before {
@@ -25,7 +30,11 @@
 
       @media @tablet-desktop {
         height: 40px;
-        margin-bottom: 57px;
+        margin-bottom: 56px;
+      }
+
+      @media @desktop {
+        height: 100px;
       }
     }
   }
@@ -35,10 +44,49 @@
       display: none;
     }
   }
+
+  .slider__togglers--list {
+    @media @desktop {
+      display: none;
+    }
+  }
 }
 
 .slider__wrapper {
   overflow: hidden;
+
+  &--list {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 100px;
+      background-image: linear-gradient(to right, var(--color-white), transparent);
+    }
+
+    @media @desktop {
+      position: relative;
+
+      &::before {
+        content: "";
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        right: 0;
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  &--table {
+    @media @desktop {
+      .centerer();
+    }
+  }
 }
 
 .slider__list {
@@ -66,12 +114,61 @@
     margin-left: 22px;
     transform: none;
   }
-}
 
-.slider__ring {
-  display: none;
+  @media @desktop {
+    width: calc(100% - 40px);
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 }
 
 .slider__togglers {
   margin: 0;
+}
+
+.slider__ring {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 22px;
+  height: 41px;
+  margin: 30px 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-darkblue-30);
+    transition: background-color 0.3s ease-in-out;
+    mask-image: url("../img/icon-arrow-left.svg");
+    mask-size: cover;
+  }
+
+  &:hover::before {
+    background-color: var(--color-darkblue-60);
+  }
+
+  &:active::before {
+    background-color: var(--color-darkblue-10);
+  }
+
+  &--next {
+    right: 0;
+    left: auto;
+
+    &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  @media @mobile-tablet {
+    display: none;
+  }
 }

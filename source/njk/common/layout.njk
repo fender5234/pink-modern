@@ -38,21 +38,23 @@
       {% endfor %}
     {% endblock %}
 
-    <script>
-      {% if page === 'success' %}
-        {% set selector = '#success' %}
-      {% elif page === 'error' %}
-        {% set selector = '#error' %}
-      {% else %}
-        {% set selector = '.viewport--page' %}
-      {% endif %}
+    {% if IS_DEV %}
+      <script>
+        {% if page === 'success' %}
+          {% set selector = '#success' %}
+        {% elif page === 'error' %}
+          {% set selector = '#error' %}
+        {% else %}
+          {% set selector = '.viewport--page' %}
+        {% endif %}
 
-      window.pinegladePP = {
-        breakpoints: [320, 660, 980],
-        selector: '{{ selector }}'
-      };
-    </script>
-    <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>
+        window.pinegladePP = {
+          breakpoints: [320, 660, 980],
+          selector: '{{ selector }}'
+        };
+      </script>
+      <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>
+    {% endif %}
     <script src="js/script.js" type="module"></script>
   </body>
 </html>

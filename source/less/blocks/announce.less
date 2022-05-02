@@ -1,11 +1,29 @@
 .announce {
-  min-height: 150px;
-  padding: 95px 34px 85px 330px;
-  background-repeat: no-repeat;
-  background-position: 20px 54px;
-
   @media @mobile {
     .sr-only();
+  }
+
+  @media @desktop {
+    background-color: var(--color-lightgrey);
+  }
+}
+
+.announce__inner {
+  min-height: 150px;
+  padding: 95px 34px 85px;
+
+  @media @tablet-desktop {
+    padding-left: 330px;
+    background-repeat: no-repeat;
+    background-position: 20px 54px;
+  }
+
+  @media @desktop {
+    padding: 162px 40px 116px 390px;
+    background-position: 20px 68px;
+    background-size: 298px 345px;
+
+    .centerer();
   }
 
   &--effect {
@@ -20,11 +38,21 @@
   font-weight: 700;
   font-size: 30px;
   color: var(--color-black);
+
+  @media @desktop {
+    margin-bottom: 26px;
+    line-height: 1;
+  }
 }
 
 .announce__description {
   margin: 0 0 14px;
   line-height: 24px;
+
+  @media @desktop {
+    margin-bottom: 34px;
+    line-height: 30px;
+  }
 }
 
 .announce__link {

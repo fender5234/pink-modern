@@ -7,11 +7,10 @@ parserOptions:
 env:
   es2017: true
   browser: true
+  node: true
 
 globals:
-  process: readonly
-  require: readonly
-  module: readonly
+  L: readonly
 
 extends:
   "htmlacademy/vanilla"

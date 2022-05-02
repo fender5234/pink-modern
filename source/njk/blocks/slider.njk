@@ -1,13 +1,15 @@
-<section class="slider {{ 'slider--table' if slider.isTable }} {{ slider.mix }}">
+{% set mode = 'table' if slider.isTable else 'list' %}
+
+<section class="slider slider--{{ mode }} {{ slider.mix }}">
   <h2 class="visually-hidden">{{ slider.heading }}.</h2>
 
-  <div class="slider__wrapper">
-    {% set mix = 'slider__table' if slider.isTable else 'slider__list' %}
+  <div class="slider__wrapper slider__wrapper--{{ mode }}">
+    {% set mix = 'slider__' + mode %}
     {% include 'blocks/' + slider.slot + '.njk' %}
   </div>
 
   {% set togglers = {
-    mix: 'slider__togglers' + (' slider__togglers--table' if slider.isTable),
+    mix: 'slider__togglers slider__togglers--' + mode,
     title: slider.togglers.title,
     length: slider.togglers.length,
     activeIndex: slider.activeIndex or 1
