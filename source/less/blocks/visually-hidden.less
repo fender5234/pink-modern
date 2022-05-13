@@ -1,3 +1,11 @@
 .visually-hidden {
-  .sr-only();
+  @media @mobile {
+    .sr-only();
+  }
+
+  &:not(&--mobile) {
+    @media @tablet-desktop {
+      .sr-only();
+    }
+  }
 }

@@ -5,8 +5,29 @@
   line-height: 30px;
   text-align: center;
 
+  @media @tablet-desktop {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 90px 50px 78px;
+    font-size: 18px;
+  }
+
+  @media @desktop {
+    padding-bottom: 90px;
+  }
+
   &:last-child {
     padding-bottom: 42px;
+
+    @media @tablet-desktop {
+      padding-top: 64px;
+      padding-bottom: 70px;
+    }
+
+    @media @desktop {
+      padding-top: 58px;
+      padding-bottom: 67px;
+    }
   }
 }
 
