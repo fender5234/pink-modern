@@ -1,20 +1,24 @@
-.add {
+.add__form {
   padding: 20px 20px 29px;
   background-color: var(--color-lightgrey);
 
-  @media @tablet-desktop {
-    padding-top: 42px;
-    padding-bottom: 54px;
-  }
-}
-
-.add__form {
   @media @tablet-desktop {
     display: grid;
     grid-template-areas: "file filters" "file submit" "file reset";
     grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr min-content min-content;
     gap: 24px 45px;
+    padding-top: 42px;
+    padding-bottom: 54px;
+  }
+
+  @media @desktop {
+    grid-template-areas: "file filters filters" "file submit reset";
+    grid-template-columns: 344px 1fr 1fr;
+    grid-template-rows: 1fr min-content;
+    padding-right: 60px;
+    padding-bottom: 57px;
+    padding-left: 80px;
   }
 }
 
@@ -26,9 +30,9 @@
   margin: 0 auto;
 
   @media @tablet-desktop {
-    width: 100%;
+    width: 300px;
     height: 400px;
-    margin-top: 15px;
+    margin: 15px 0 0;
   }
 
   &:focus-within {
@@ -103,9 +107,20 @@
   @media @tablet-desktop {
     display: flex;
     align-items: center;
+    min-height: 71px;
     margin: 0;
-    padding: 24px 18px 24px 0;
+    padding-right: 18px;
     border-bottom: 1px solid var(--color-darkblue-10);
+  }
+
+  @media @desktop {
+    padding-right: 30px;
+  }
+
+  &:last-child {
+    @media @desktop {
+      border-bottom: none;
+    }
   }
 }
 
@@ -120,11 +135,14 @@
 
   @media @tablet-desktop {
     display: flex;
-    width: 30px;
-    height: 22px;
     margin-right: 25px;
     color: var(--color-pink);
     pointer-events: none;
+  }
+
+  @media @tablet {
+    width: 30px;
+    height: 22px;
   }
 
   &:hover {
@@ -151,7 +169,7 @@
     height: 44px;
     mask-image: url("../img/icon-crop.svg");
 
-    @media @tablet-desktop {
+    @media @tablet {
       width: 22px;
       height: 22px;
     }
@@ -162,7 +180,7 @@
     height: 43px;
     mask-image: url("../img/icon-fill.svg");
 
-    @media @tablet-desktop {
+    @media @tablet {
       width: 24px;
       height: 22px;
     }
@@ -173,9 +191,13 @@
     height: 32px;
     mask-image: url("../img/icon-grayscale.svg");
 
-    @media @tablet-desktop {
+    @media @tablet {
       width: 16px;
       height: 16px;
+    }
+
+    @media @desktop {
+      margin: 6px;
     }
   }
 }
@@ -192,6 +214,11 @@
     position: static;
     display: block;
     width: 100%;
+  }
+
+  @media @desktop {
+    width: 288px;
+    margin-left: auto;
   }
 }
 
@@ -227,6 +254,10 @@
   @media @tablet-desktop {
     width: auto;
     margin: 0 13px 0 2px;
+  }
+
+  @media @desktop {
+    margin: 0;
   }
 
   &:hover {

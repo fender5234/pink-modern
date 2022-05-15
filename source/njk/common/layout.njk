@@ -52,7 +52,7 @@
           if (evt.key === 'e') {
             document.body.contentEditable = document.body.contentEditable === 'true' ? false : true;
 
-            document.querySelectorAll('p, b, a').forEach((element) => {
+            document.querySelectorAll('p, b, a, button').forEach((element) => {
               element.spellcheck = !element.spellcheck;
             });
           }
