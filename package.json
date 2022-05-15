@@ -33,12 +33,13 @@
     "terser": "5.12.1"
   },
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
-    "lint": "npm run editorconfig && npm run stylelint",
-    "test": "cross-env NODE_ENV=test gulp test",
     "build": "cross-env NODE_ENV=production gulp build",
-    "start": "cross-env NODE_ENV=development gulp"
+    "editorconfig": "editorconfig-cli",
+    "lint": "npm run editorconfig && npm run stylelint",
+    "postinstall": "npx browserslist@latest --update-db",
+    "start": "cross-env NODE_ENV=development gulp",
+    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
+    "test": "cross-env NODE_ENV=test gulp test"
   },
   "browserslist": [
     "last 2 versions",
