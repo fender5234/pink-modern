@@ -48,8 +48,15 @@
           {% set selector = '.viewport--page' %}
         {% endif %}
 
-        document.body.contentEditable = true;
-        document.querySelectorAll('*').forEach((element) => element.spellcheck = false);
+        document.addEventListener('keydown', (evt) => {
+          if (evt.key === 'e') {
+            document.body.contentEditable = document.body.contentEditable === 'true' ? false : true;
+
+            document.querySelectorAll('p, b, a').forEach((element) => {
+              element.spellcheck = !element.spellcheck;
+            });
+          }
+        });
 
         window.pinegladePP = {
           breakpoints: [320, 660, 980],
