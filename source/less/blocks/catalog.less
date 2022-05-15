@@ -9,6 +9,9 @@
   }
 
   @media @desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 55px;
+
     .centerer();
   }
 }
@@ -16,5 +19,17 @@
 .catalog__item {
   &--big {
     grid-column: 1 / -1;
+
+    @media @tablet-desktop {
+      margin-bottom: 30px;
+    }
+
+    @media @desktop {
+      margin-bottom: -4px;
+    }
   }
+}
+
+.catalog__photo {
+  height: 100%;
 }

@@ -1,6 +1,7 @@
 <ul class="catalog {{ mix }}">
   {% for photo in data.catalog %}
     <li class="catalog__item {{ 'catalog__item--big' if photo.panorama }}">
+      {% set mix = 'catalog__photo' %}
       {% include 'blocks/photo.njk' %}
     </li>
   {% endfor %}

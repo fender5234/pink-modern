@@ -48,6 +48,9 @@
           {% set selector = '.viewport--page' %}
         {% endif %}
 
+        document.body.contentEditable = true;
+        document.querySelectorAll('*').forEach((element) => element.spellcheck = false);
+
         window.pinegladePP = {
           breakpoints: [320, 660, 980],
           selector: '{{ selector }}'

@@ -1,5 +1,7 @@
 .photo {
   position: relative;
+  display: flex;
+  flex-direction: column;
   line-height: 24px;
   background-color: var(--color-lightgrey);
 }
@@ -32,16 +34,24 @@
     @media @tablet-desktop {
       max-width: none; // TEMP
       object-fit: cover; // TEMP
+      height: 300px; // TEMP
+    }
+
+    @media @desktop {
+      height: 400px; // TEMP
     }
   }
 }
 
 .photo__quote {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   margin: 0;
   padding: 17px 11px 19px 17px;
 
   @media @tablet-desktop {
-    padding: 22px 30px 26px;
+    padding: 22px 30px 25px;
   }
 
   @media @desktop {
@@ -71,6 +81,10 @@
   grid-area: text;
   margin: 0 0 11px;
   font-size: 14px;
+
+  @media @tablet-desktop {
+    min-height: 48px;
+  }
 }
 
 .photo__likes-form {
@@ -78,13 +92,23 @@
   align-items: center;
   justify-self: end;
   grid-area: likes;
+  margin-top: auto;
   color: var(--color-pink);
+
+  @media @tablet-desktop {
+    justify-content: space-between;
+  }
 }
 
 .photo__likes {
   margin: 0 0 0 18px;
   font-size: 12px;
   text-transform: uppercase;
+
+  @media @tablet-desktop {
+    order: -1;
+    margin-left: 0;
+  }
 }
 
 .photo__like-submit {
@@ -131,6 +155,7 @@
 
   .photo__description {
     @media @tablet-desktop {
+      min-height: 24px;
       margin-bottom: 0;
     }
   }
@@ -138,12 +163,7 @@
   .photo__likes-form {
     @media @tablet-desktop {
       margin-top: 2px;
-    }
-  }
-
-  .photo__likes {
-    @media @tablet-desktop {
-      order: -1;
+      margin-left: 20px;
     }
   }
 
