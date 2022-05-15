@@ -3,6 +3,7 @@ import bemValidator from 'gulp-html-bem-validator';
 import browser from 'browser-sync';
 import eslint from 'gulp-eslint';
 import gulp from 'gulp';
+import gulpIf from 'gulp-if';
 import less from 'gulp-less';
 import lessSyntax from 'postcss-less';
 import lintspaces from 'gulp-lintspaces';
@@ -17,6 +18,9 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 const { src, dest, watch, series, parallel } = gulp;
 const checkLintspaces = () => lintspaces({
   editorconfig: '.editorconfig'
+});
+const reportLintspaces = () => lintspaces.reporter({
+  breakOnWarning: !IS_DEV
 });
 const editorconfigSources = [
   'source/njk/**/*.njk',
@@ -38,7 +42,7 @@ export const buildHTML = () => testHTML()
 
 export const testEditorconfig = () => src(editorconfigSources)
   .pipe(checkLintspaces())
-  .pipe(lintspaces.reporter());
+  .pipe(reportLintspaces());
 
 export const styles = () => src('source/less/*.less', { sourcemaps: IS_DEV })
   .pipe(less())
@@ -49,25 +53,26 @@ export const styles = () => src('source/less/*.less', { sourcemaps: IS_DEV })
 
 export const testStyles = () => src('source/less/**/*.less')
   .pipe(checkLintspaces())
-  .pipe(lintspaces.reporter())
+  .pipe(reportLintspaces())
   .pipe(postcss([
     stylelint(),
     postcssBemLinter(),
     postcssReporter({
       clearAllMessages: true,
-      throwError: false
+      throwError: !IS_DEV
     })
   ], {
     syntax: lessSyntax
   }));
 
 export const testScripts = () => src(jsSources)
+  .pipe(checkLintspaces())
+  .pipe(reportLintspaces())
   .pipe(eslint({
     fix: false
   }))
   .pipe(eslint.format())
-  .pipe(checkLintspaces())
-  .pipe(lintspaces.reporter());
+  .pipe(gulpIf(!IS_DEV, eslint.failAfterError()));
 
 const server = (done) => {
   browser.init({

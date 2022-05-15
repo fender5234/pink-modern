@@ -4,10 +4,6 @@
   background-color: var(--color-lightgrey);
 }
 
-.photo__body {
-  margin: 0;
-}
-
 .photo__label {
   position: absolute;
   top: 0;
@@ -19,30 +15,49 @@
   color: var(--color-white);
   text-transform: uppercase;
   background-color: var(--color-pink);
+
+  @media @tablet-desktop {
+    top: 57px;
+  }
+
+  @media @desktop {
+    top: 54px;
+  }
 }
 
 .photo__picture {
   display: block;
 
-  &--panorama {
-    margin: 0 -20px;
+  img {
+    @media @tablet-desktop {
+      max-width: none; // TEMP
+      object-fit: cover; // TEMP
+    }
   }
-}
-
-.photo__content {
-  padding: 17px 11px 11px 17px;
 }
 
 .photo__quote {
   margin: 0;
+  padding: 17px 11px 19px 17px;
+
+  @media @tablet-desktop {
+    padding: 22px 30px 26px;
+  }
+
+  @media @desktop {
+    padding-bottom: 23px; // PP
+    padding-left: 27px; // PP
+  }
 }
 
 .photo__cite {
+  grid-area: author;
   margin: 0;
 }
 
 .photo__author {
   font-weight: 700;
+  font-size: 14px;
   font-style: normal;
 }
 
@@ -53,24 +68,27 @@
 }
 
 .photo__description {
-  margin: 0;
+  grid-area: text;
+  margin: 0 0 11px;
+  font-size: 14px;
 }
 
 .photo__likes-form {
   display: flex;
   align-items: center;
-  padding: 0 17px 19px;
+  justify-self: end;
+  grid-area: likes;
   color: var(--color-pink);
 }
 
 .photo__likes {
-  margin: 0;
+  margin: 0 0 0 18px;
   font-size: 12px;
   text-transform: uppercase;
 }
 
 .photo__like-submit {
-  margin-right: 18px;
+  height: 24px;
   padding: 0;
   color: var(--color-pink);
   background-color: transparent;
@@ -86,4 +104,52 @@
   }
 
   .pink-states(var(--color-pink-60));
+}
+
+.photo--panorama {
+  .photo__quote {
+    @media @tablet-desktop {
+      display: grid;
+      grid-template-areas: "author likes" "text text";
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+
+  .photo__picture {
+    margin: 0 -20px;
+
+    img {
+      @media @tablet-desktop {
+        height: 509px; // TEMP
+      }
+
+      @media @desktop {
+        height: 506px; // TEMP
+      }
+    }
+  }
+
+  .photo__description {
+    @media @tablet-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  .photo__likes-form {
+    @media @tablet-desktop {
+      margin-top: 2px;
+    }
+  }
+
+  .photo__likes {
+    @media @tablet-desktop {
+      order: -1;
+    }
+  }
+
+  .photo__like-submit {
+    @media @tablet-desktop {
+      margin-left: 16px;
+    }
+  }
 }

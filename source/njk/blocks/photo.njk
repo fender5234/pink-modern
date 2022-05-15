@@ -1,34 +1,30 @@
-<article class="photo">
+<article class="photo {{ 'photo--panorama' if photo.panorama }}">
   <h2 class="visually-hidden">{{ photo.heading }}.</h2>
 
   {% if photo.panorama %}
     <p class="photo__label">{{ photo.panorama }}</p>
   {% endif %}
 
-  <figure class="photo__body">
-    {% set picture = {
-      mix: 'picture--fullwidth photo__picture' + (' photo__picture--panorama' if photo.panorama),
-      src: photo.image,
-      alt: photo.imageText
-    } %}
-    {% include 'blocks/picture.njk' %}
+  {% set picture = {
+    mix: 'picture--fullwidth photo__picture',
+    src: photo.image,
+    alt: photo.imageText
+  } %}
+  {% include 'blocks/picture.njk' %}
 
-    <figcaption class="photo__content">
-      <blockquote class="photo__quote">
-        <p class="photo__cite">
-          <cite class="photo__author">{{ photo.author }}</cite>
-          <time class="photo__time" datetime="{{ photo.created }}">({{ photo.time }})</time>
-        </p>
-        <p class="photo__description">{{ photo.description }}</p>
-      </blockquote>
-    </figcaption>
-  </figure>
+  <blockquote class="photo__quote">
+    <p class="photo__cite">
+      <cite class="photo__author">{{ photo.author }}</cite>
+      <time class="photo__time" datetime="{{ photo.created }}">({{ photo.time }})</time>
+    </p>
+    <p class="photo__description">{{ photo.description }}</p>
 
-  <form class="photo__likes-form" action="{{ config.action }}" method="post">
-    <input type="hidden" name="userId" value="{{ config.userId }}">
-    <button class="photo__like-submit" type="submit" name="photo" value="{{ photo.image }}">
-      <span class="visually-hidden">{{ data.likes.label }}.</span>
-    </button>
-    <p class="photo__likes">{{ data.likes.prepend }}: {{ photo.likes }}</p>
-  </form>
+    <form class="photo__likes-form" action="{{ config.action }}" method="post">
+      <input type="hidden" name="userId" value="{{ config.userId }}">
+      <button class="photo__like-submit" type="submit" name="photo" value="{{ photo.image }}">
+        <span class="visually-hidden">{{ data.likes.label }}.</span>
+      </button>
+      <p class="photo__likes">{{ data.likes.prepend }}: {{ photo.likes }}</p>
+    </form>
+  </blockquote>
 </article>
