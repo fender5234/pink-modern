@@ -4,7 +4,13 @@
   }
 
   &:not(&--mobile) {
-    @media @tablet-desktop {
+    @media @tablet {
+      .sr-only();
+    }
+  }
+
+  &:not(&--mobile):not(&--mobile-tablet) {
+    @media @desktop {
       .sr-only();
     }
   }

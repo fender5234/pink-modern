@@ -22,3 +22,11 @@
     margin-left: auto;
   }
 }
+
+.auto-areas(@limit: 6, @i: 1) when (@i <= @limit) {
+  &:nth-child(@{i}) {
+    grid-area: ~"area-@{i}";
+  }
+
+  .auto-areas(@limit, @i + 1);
+}

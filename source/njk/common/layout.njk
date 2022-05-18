@@ -54,7 +54,7 @@
 
         document.addEventListener('keydown', (evt) => {
           if (evt.key.toLowerCase() === 'e') {
-            document.body.contentEditable = document.body.contentEditable === 'true' ? false : true;
+            document.body.contentEditable = document.body.contentEditable !== 'true';
           }
         });
 
