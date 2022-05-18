@@ -2,30 +2,93 @@
   padding: 31px 20px 42px;
   border: none;
 
+  @media @tablet-desktop {
+    padding-right: 58px;
+    padding-bottom: 28px;
+    padding-left: 58px;
+    border: 2px solid var(--color-grey);
+  }
+
   &--checkers {
     padding-top: 38px;
     padding-bottom: 45px;
-    background-color: var(--color-lightgrey);
+
+    @media @mobile {
+      background-color: var(--color-lightgrey);
+    }
+
+    @media @tablet-desktop {
+      padding-bottom: 52px;
+    }
+  }
+
+  &--checkbox {
+    .fieldset__title {
+      @media @tablet-desktop {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  // PP
+  &--radio {
+    padding-bottom: 39px;
+
+    .fieldset__title {
+      margin-bottom: 42px;
+
+      @media @tablet-desktop {
+        margin-bottom: 12px;
+      }
+    }
+
+    .fieldset__list {
+      position: relative;
+      top: -5px;
+    }
+
+    .fieldset__item + .fieldset__item {
+      margin-top: 40px;
+    }
   }
 
   &:first-of-type {
     padding-top: 0;
 
+    @media @tablet-desktop {
+      padding: 0;
+      border: none;
+    }
+
     .fieldset__title {
       .sr-only();
+    }
+
+    .fieldset__field + .fieldset__field {
+      @media @tablet-desktop {
+        margin-top: 52px;
+      }
     }
   }
 }
 
 .fieldset__title {
-  float: left;
-  width: 100%;
-  margin: 0 0 40px;
+  margin: 0 auto 40px;
   padding: 0;
   line-height: 18px;
   text-align: center;
   color: var(--color-pink);
   text-transform: uppercase;
+
+  @media @mobile {
+    float: left;
+    width: 100%;
+  }
+
+  @media @tablet-desktop {
+    margin-bottom: 5px;
+    padding: 0 30px;
+  }
 
   &--alone {
     margin-bottom: 17px;
@@ -51,28 +114,17 @@
 
   & + & {
     margin-top: 16px;
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+
+    @media @desktop {
+      margin-top: 0;
+    }
   }
 }
 
 .fieldset__checker {
   margin: 0;
-}
-
-// PP
-.fieldset--radio {
-  margin-bottom: 6px;
-  padding-bottom: 39px;
-
-  .fieldset__title {
-    margin-bottom: 42px;
-  }
-
-  .fieldset__list {
-    position: relative;
-    top: -5px;
-  }
-
-  .fieldset__item + .fieldset__item {
-    margin-top: 40px;
-  }
 }

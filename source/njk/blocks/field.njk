@@ -5,12 +5,12 @@
   {{ 'required' if field.required }}
 {% endmacro %}
 
-<p class="field {{ mix }}">
+<p class="field {{ 'field--type--' + field.type if field.type }} {{ mix }}">
   <label class="{{ 'visually-hidden' if field.hiddenTitle else 'field__label' }}" for="{{ field.name }}">
     {{ field.title }}
   </label>
 
-  {% if field.type == 'textarea' %}
+  {% if field.textarea %}
     <textarea class="field__input field__input--message" {{ attrs(field, loop.index) }}></textarea>
   {% else %}
     <input

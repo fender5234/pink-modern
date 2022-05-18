@@ -1,24 +1,12 @@
-.page-header__back() {
-  background-image: url("../img/back-header-mobile.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-
-  @media @no-xs {
-    background-image: url("../img/back-header-tablet.jpg");
-  }
-
-  @media @no-sm {
-    background-image: url("../img/back-header-desktop.jpg");
-  }
-}
-
 .page-header {
   color: var(--color-white);
   background-color: var(--color-darkblue);
 
   @media @desktop {
-    .page-header__back();
+    background-image: url("../img/back-header-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
   }
 }
 
@@ -117,7 +105,18 @@
   position: relative;
 
   @media @mobile-tablet {
-    .page-header__back();
+    background-image: url("../img/back-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+    @media @no-xs {
+      background-image: url("../img/back-header-tablet.jpg");
+    }
+
+    @media @no-sm {
+      background-image: url("../img/back-header-desktop.jpg");
+    }
   }
 
   @media @tablet-desktop {
@@ -131,8 +130,14 @@
   @media @mobile {
     margin-top: -66px;
     padding: 89px 0 0;
+    background-image: url("../img/back-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
 
-    .page-header__back();
+    @media @no-xs {
+      background-image: url("../img/back-header-tablet.jpg");
+    }
   }
 
   @media @tablet {
@@ -206,8 +211,14 @@
   @media @mobile {
     min-height: 99px;
     margin-top: -66px;
+    background-image: url("../img/back-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
 
-    .page-header__back();
+    @media @no-xs {
+      background-image: url("../img/back-header-tablet.jpg");
+    }
   }
 
   @media @tablet {
@@ -271,9 +282,11 @@
   }
 
   .page-header__nav {
-    top: 100%;
-    visibility: visible;
-    transition-timing-function: ease-in;
+    @media @mobile-tablet {
+      top: 100%;
+      visibility: visible;
+      transition-timing-function: ease-in;
+    }
   }
 }
 

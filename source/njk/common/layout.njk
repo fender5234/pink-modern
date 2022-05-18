@@ -48,13 +48,13 @@
           {% set selector = '.viewport--page' %}
         {% endif %}
 
-        document.addEventListener('keydown', (evt) => {
-          if (evt.key === 'e') {
-            document.body.contentEditable = document.body.contentEditable === 'true' ? false : true;
+        document.querySelectorAll('h1, h2, h3, p, b, a, button, label, legend').forEach((element) => {
+          element.spellcheck = false;
+        });
 
-            document.querySelectorAll('p, b, a, button').forEach((element) => {
-              element.spellcheck = !element.spellcheck;
-            });
+        document.addEventListener('keydown', (evt) => {
+          if (evt.key.toLowerCase() === 'e') {
+            document.body.contentEditable = document.body.contentEditable === 'true' ? false : true;
           }
         });
 

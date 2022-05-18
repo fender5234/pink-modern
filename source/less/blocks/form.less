@@ -1,14 +1,59 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @media @tablet-desktop {
+    padding: 0 20px;
+  }
+}
+
 .form__fieldset {
   margin: 0;
+
+  @media @tablet-desktop {
+    margin-bottom: 58px;
+  }
+
+  &--fio {
+    @media @tablet-desktop {
+      order: -3;
+    }
+  }
+
+  &--app {
+    margin-bottom: 6px;
+
+    @media @tablet-desktop {
+      order: -2;
+    }
+  }
+
+  &--contacts {
+    @media @tablet-desktop {
+      order: -1;
+    }
+  }
 }
 
 .form__footer {
   padding: 0 20px 16px;
+
+  @media @tablet-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 48px;
+  }
 }
 
 .form__submit {
   width: 100%;
   margin-bottom: 34px;
+
+  @media @tablet-desktop {
+    max-width: 48.375%;
+    margin-bottom: 0;
+  }
 }
 
 .form__description {

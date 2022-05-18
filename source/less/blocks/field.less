@@ -1,12 +1,33 @@
 .field {
   line-height: 30px;
+
+  @media @tablet-desktop {
+    display: flex;
+    align-items: center;
+
+    &--type--tel::after {
+      background-image: url("../img/icon-tel.svg");
+      background-position: 18px 50%;
+    }
+
+    &--type--email::after {
+      background-image: url("../img/icon-email.svg");
+      background-position: 19px 50%;
+    }
+  }
 }
 
 .field__label {
   display: block;
   margin: 0 23px 6px;
+  font-size: 14px;
   color: var(--color-pink);
   text-transform: uppercase;
+
+  @media @tablet-desktop {
+    max-width: 30%;
+    margin: 0 20px 0 0;
+  }
 }
 
 .field__input {
@@ -40,5 +61,49 @@
   &--message {
     min-height: 201px;
     resize: none;
+
+    @media @tablet-desktop {
+      min-height: 193px;
+      margin-bottom: 23px;
+    }
+  }
+}
+
+
+.field[class*="--type--"] {
+  @media @tablet-desktop {
+    position: relative;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 0 59px 0 0;
+  }
+
+  &::after {
+    @media @tablet-desktop {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 59px;
+      height: 63px;
+      background-color: var(--color-grey);
+      background-repeat: no-repeat;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  .field__label {
+    max-width: none;
+
+    @media @tablet-desktop {
+      margin: 9px 19px 0;
+    }
+  }
+
+  .field__input {
+    @media @tablet-desktop {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 }

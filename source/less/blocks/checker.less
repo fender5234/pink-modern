@@ -15,6 +15,7 @@
   &::before {
     content: "";
     position: absolute;
+    top: -1px;
     right: -4px;
     bottom: -3px;
     left: 0;
@@ -46,7 +47,6 @@
 
   &--checkbox {
     &::before {
-      top: -1px;
       border-radius: 3px;
     }
 
@@ -62,15 +62,18 @@
   &--radio {
     margin-right: 35px; // PP
 
+    @media @tablet-desktop {
+      margin-right: 26px;
+    }
+
     &::before {
-      top: -2px;
       width: 37px;
       height: 37px;
       border-radius: 50%;
     }
 
     &::after {
-      top: 11px;
+      top: 12px;
       left: 13px;
       width: 15px;
       height: 15px;

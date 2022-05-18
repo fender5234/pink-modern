@@ -1,6 +1,6 @@
 <form class="form {{ mix }}" action="{{ data.action }}" method="post" novalidate>
   {% for fieldset in data.fieldsets %}
-    {% set mix = 'form__fieldset' %}
+    {% set mix = 'form__fieldset form__fieldset--' + fieldset.name %}
     {% include 'blocks/fieldset.njk' %}
   {% endfor %}
 

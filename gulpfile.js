@@ -7,6 +7,7 @@ import gulpIf from 'gulp-if';
 import less from 'gulp-less';
 import lessSyntax from 'postcss-less';
 import lintspaces from 'gulp-lintspaces';
+import mqpacker from 'postcss-sort-media-queries';
 import postcss from 'gulp-postcss';
 import postcssBemLinter from 'postcss-bem-linter';
 import postcssReporter from 'postcss-reporter';
@@ -47,6 +48,7 @@ export const testEditorconfig = () => src(editorconfigSources)
 export const styles = () => src('source/less/*.less', { sourcemaps: IS_DEV })
   .pipe(less())
   .pipe(postcss([
+    mqpacker(),
     autoprefixer()
   ]))
   .pipe(dest('source/css', { sourcemaps: '.' }));
