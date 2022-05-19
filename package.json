@@ -19,6 +19,7 @@
     "gulp-postcss": "9.0.1",
     "gulp-posthtml": "3.0.5",
     "gulp-rename": "2.0.0",
+    "gulp-svg-sprite": "1.5.0",
     "htmlnano": "2.0.0",
     "nunjucks": "3.2.3",
     "pineglade-w3c": "1.0.1",
@@ -54,6 +55,7 @@
     "source/njk/**/*.njk",
     "source/js/**/*.js",
     "source/img/**/*.svg",
+    "source/sprite/**/*.svg",
     "source/less/**/*.less"
   ],
   "engines": {

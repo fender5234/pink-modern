@@ -20,16 +20,23 @@
   background-position: 50%;
 
   &--apple {
-    background-image: url("../img/icon-market-apple.svg");
+    background-image: url("../img/sprite.svg#icon-market-apple");
+    background-size: 47px;
   }
 
   &--android {
-    background-image: url("../img/icon-market-android.svg");
-    background-position: 50% 16px;
+    background-image: url("../img/sprite.svg#icon-market-android");
+    background-position: 50% 15px;
+    background-size: 43px;
   }
 
   &--windows {
-    background-image: url("../img/icon-market-windows.svg");
-    background-position: 50% 22px;
+    background-image: url("../img/sprite.svg#icon-market-windows");
+    background-position: 50% 17px;
+    background-size: 44px;
+
+    @media @tablet {
+      background-position-y: 13px;
+    }
   }
 }

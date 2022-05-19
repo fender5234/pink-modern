@@ -158,6 +158,8 @@
     display: block;
     margin: auto;
     background-color: currentColor;
+    mask-size: 100%;
+    mask-position: 0;
 
     @media @tablet-desktop {
       mask-size: cover;
@@ -167,7 +169,7 @@
   &--crop::before {
     width: 44px;
     height: 44px;
-    mask-image: url("../img/icon-crop.svg");
+    mask-image: url("../img/sprite.svg#icon-crop");
 
     @media @tablet {
       width: 22px;
@@ -178,7 +180,7 @@
   &--pink::before {
     width: 48px;
     height: 43px;
-    mask-image: url("../img/icon-fill.svg");
+    mask-image: url("../img/sprite.svg#icon-fill");
 
     @media @tablet {
       width: 24px;
@@ -189,7 +191,7 @@
   &--grayscale::before {
     width: 32px;
     height: 32px;
-    mask-image: url("../img/icon-grayscale.svg");
+    mask-image: url("../img/sprite.svg#icon-grayscale");
 
     @media @tablet {
       width: 16px;

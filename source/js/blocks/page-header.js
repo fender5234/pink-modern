@@ -2,7 +2,6 @@ export default class PageHeader {
   constructor(pageHeaderElement) {
     this._pageHeaderElement = pageHeaderElement;
     this._togglerElement = pageHeaderElement.querySelector('.page-header__toggler');
-    this._navElement = pageHeaderElement.querySelector('.page-header__nav');
 
     this._setListeners();
 

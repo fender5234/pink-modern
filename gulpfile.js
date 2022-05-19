@@ -13,6 +13,7 @@ import postcssBemLinter from 'postcss-bem-linter';
 import postcssReporter from 'postcss-reporter';
 import posthtml from 'gulp-posthtml';
 import rename from 'gulp-rename';
+import stackSprite from 'gulp-svg-sprite';
 import stylelint from 'stylelint';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -26,7 +27,8 @@ const reportLintspaces = () => lintspaces.reporter({
 const editorconfigSources = [
   'source/njk/**/*.njk',
   '*.json',
-  'source/img/**/*.svg'
+  'source/img/**/*.svg',
+  'source/sprite/**/*.svg'
 ];
 const jsSources = [
   'source/js/**/*.js',
@@ -76,6 +78,11 @@ export const testScripts = () => src(jsSources)
   .pipe(eslint.format())
   .pipe(gulpIf(!IS_DEV, eslint.failAfterError()));
 
+export const buildSprite = () => src('source/sprite/**/*.svg')
+  .pipe(stackSprite({ mode: { stack: true } }))
+  .pipe(rename('sprite.svg'))
+  .pipe(dest('source/img'));
+
 const server = (done) => {
   browser.init({
     server: {
@@ -96,9 +103,10 @@ const reload = (done) => {
 const watcher = () => {
   watch(editorconfigSources, series(testEditorconfig, buildHTML, reload));
   watch('source/less/**/*.less', series(testStyles, styles, reload));
+  watch('source/sprite/**/*.svg', series(buildSprite, reload));
   watch(jsSources, series(testScripts, reload));
 };
 
 export const test = parallel(testHTML, testEditorconfig, testStyles, testScripts);
-export const build = parallel(buildHTML, styles);
+export const build = parallel(buildHTML, styles, buildSprite);
 export default series(test, build, server, watcher);

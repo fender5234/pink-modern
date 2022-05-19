@@ -24,6 +24,8 @@
     height: 18px;
     margin: auto;
     background-color: var(--color-pink);
+    mask-size: 100%;
+    mask-position: 0 -1px;
     transition: inherit;
   }
 
@@ -41,14 +43,14 @@
   }
 
   &--vkontakte::before {
-    mask-image: url("../img/icon-social-vkontakte.svg");
+    mask-image: url("../img/sprite.svg#icon-social-vkontakte");
   }
 
   &--telegram::before {
-    mask-image: url("../img/icon-social-telegram.svg");
+    mask-image: url("../img/sprite.svg#icon-social-telegram");
   }
 
   &--youtube::before {
-    mask-image: url("../img/icon-social-youtube.svg");
+    mask-image: url("../img/sprite.svg#icon-social-youtube");
   }
 }
