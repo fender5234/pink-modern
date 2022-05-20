@@ -1,3 +1,7 @@
+.content {
+  overflow-x: hidden;
+}
+
 .content__lead {
   display: block;
   padding: 43px 20px 51px;
@@ -43,6 +47,23 @@
 
     @media @desktop {
       margin-top: -18px;
+    }
+  }
+
+  &--catalog {
+    margin-right: auto;
+    margin-left: auto;
+
+    @media @mobile {
+      max-width: 280px;
+    }
+
+    @media @tablet {
+      max-width: 620px;
+    }
+
+    @media @desktop {
+      width: 940px;
     }
   }
 }

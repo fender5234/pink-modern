@@ -3,10 +3,11 @@
   background-color: var(--color-darkblue);
 
   @media @desktop {
-    background-image: url("../img/back-header-desktop.jpg");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
+
+    .retina-bg("back-header-desktop");
   }
 }
 
@@ -106,17 +107,20 @@
   position: relative;
 
   @media @mobile-tablet {
-    background-image: url("../img/back-header-mobile.jpg");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
 
+    @media @xs {
+      .retina-bg("back-header");
+    }
+
     @media @no-xs {
-      background-image: url("../img/back-header-tablet.jpg");
+      .retina-bg("back-header-tablet");
     }
 
     @media @no-sm {
-      background-image: url("../img/back-header-desktop.jpg");
+      .retina-bg("back-header-desktop");
     }
   }
 
@@ -128,16 +132,19 @@
 }
 
 .page-header__collage {
+  @media @xs {
+    .retina-bg("back-header");
+  }
+
   @media @mobile {
     margin-top: -66px;
     padding: 89px 0 0;
-    background-image: url("../img/back-header-mobile.jpg");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
 
     @media @no-xs {
-      background-image: url("../img/back-header-tablet.jpg");
+      .retina-bg("back-header-tablet");
     }
   }
 
@@ -184,9 +191,18 @@
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+
+  // PP
+  // (хотя более правильным будет обрезать картинку на 106px справа,
+  // но я решил показать вариант, когда нет такой возможности)
+  @media @desktop {
+    max-width: 100%;
+    overflow: hidden;
 
     img {
-      width: 550px; // TEMP
+      max-width: none;
+      transform: translateX(106px);
     }
   }
 }
@@ -209,16 +225,19 @@
   line-height: 33px;
   text-align: center;
 
+  @media @xs {
+    .retina-bg("back-header");
+  }
+
   @media @mobile {
     min-height: 99px;
     margin-top: -66px;
-    background-image: url("../img/back-header-mobile.jpg");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
 
     @media @no-xs {
-      background-image: url("../img/back-header-tablet.jpg");
+      .retina-bg("back-header-tablet");
     }
   }
 

@@ -7,8 +7,11 @@
 
   {% set picture = {
     mix: 'picture--fullwidth photo__picture',
-    src: photo.image,
-    alt: photo.imageText
+    image: photo.image,
+    ext: photo.ext,
+    xs: photo.xs,
+    sm: photo.sm,
+    alt: photo.heading
   } %}
   {% include 'blocks/picture.njk' %}
 

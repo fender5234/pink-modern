@@ -29,18 +29,6 @@
 
 .photo__picture {
   display: block;
-
-  img {
-    @media @tablet-desktop {
-      max-width: none; // TEMP
-      object-fit: cover; // TEMP
-      height: 300px; // TEMP
-    }
-
-    @media @desktop {
-      height: 400px; // TEMP
-    }
-  }
 }
 
 .photo__quote {
@@ -142,15 +130,21 @@
   }
 
   .photo__picture {
-    margin: 0 -20px;
+    margin: 0 -50vw;
+    overflow: hidden;
 
     img {
-      @media @tablet-desktop {
-        height: 509px; // TEMP
+      max-width: 100vw;
+      height: 137px;
+      margin: 0 auto;
+      object-fit: cover;
+
+      @media @no-xs {
+        height: 509px;
       }
 
-      @media @desktop {
-        height: 506px; // TEMP
+      @media @no-sm {
+        height: 506px; // PP
       }
     }
   }

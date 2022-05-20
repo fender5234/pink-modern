@@ -22,7 +22,8 @@
 
         {% set picture = {
           mix: 'page-header__picture',
-          src: data.promo.image,
+          image: data.promo.image,
+          ext: data.promo.ext,
           alt: data.promo.imageText
         } %}
         {% include 'blocks/picture.njk' %}

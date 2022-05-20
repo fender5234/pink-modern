@@ -1,25 +1,28 @@
 .map {
   position: relative;
-  height: 62.5vw;
   background-color: var(--color-grey);
-  background-image: url("../img/back-map-mobile.png");
   background-repeat: no-repeat;
   background-position: 50%;
 
+  @media @xs {
+    height: 62.5vw;
+    background-size: 320px 200px;
+
+    .retina-bg("back-map", "png");
+  }
+
   @media @no-xs {
-    background-image: url("../img/back-map-tablet.png");
+    height: 56.67vw;
+    background-size: 660px 374px;
+
+    .retina-bg("back-map-tablet", "png");
   }
 
   @media @no-sm {
-    background-image: url("../img/back-map-desktop.png");
-  }
-
-  @media @tablet-desktop {
-    height: 56.67vw;
-  }
-
-  @media @desktop {
     height: 502px;
+    background-size: 1200px 502px;
+
+    .retina-bg("back-map-desktop", "png");
   }
 
   &::before {

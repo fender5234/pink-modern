@@ -30,3 +30,11 @@
 
   .auto-areas(@limit, @i + 1);
 }
+
+.retina-bg(@bg, @ext: 'jpg') {
+  background-image: url("../img/@{bg}.@{ext}");
+
+  @media @retina {
+    background-image: url("../img/@{bg}@2x.@{ext}");
+  }
+}

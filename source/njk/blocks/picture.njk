@@ -1,3 +1,17 @@
 <picture class="picture {{ picture.mix }}">
-  <img class="picture__image" src="img/{{ picture.src }}" alt="{{ picture.alt }}.">
+  <source
+    media="(min-width: {{ picture.sm or 980 }}px)"
+    srcset="{{ picture.image }}-desktop.{{ picture.ext }} 1x, {{ picture.image }}-desktop@2x.{{ picture.ext }} 2x"
+  />
+  <source
+    media="(min-width: {{ picture.xs or 660 }}px)"
+    srcset="{{ picture.image }}-tablet.{{ picture.ext }} 1x, {{ picture.image }}-tablet@2x.{{ picture.ext }} 2x"
+  />
+  <img
+    class="picture__image"
+    src="{{ picture.image }}.{{ picture.ext }}"
+    srcset="{{ picture.image }}@2x.{{ picture.ext }} 2x"
+    alt="{{ picture.alt }}."
+    loading="lazy"
+  />
 </picture>

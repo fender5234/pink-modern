@@ -41,7 +41,7 @@
 }
 
 .add__file-chooser {
-  --image: url("../img/photo-add-mobile.jpg");
+  --image: url("../img/photo-add.jpg");
   --size: 100%;
   --pink: 0;
   --grayscale: 0;
@@ -56,7 +56,11 @@
   filter: grayscale(var(--grayscale));
 
   @media @tablet-desktop {
-    --image: url("../img/photo-add.jpg");
+    --image: url("../img/photo-add-tablet.jpg");
+
+    @media @retina {
+      --image: url("../img/photo-add-tablet@2x.jpg");
+    }
   }
 
   &::after {
