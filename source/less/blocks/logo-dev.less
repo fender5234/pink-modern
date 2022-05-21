@@ -3,8 +3,19 @@
   align-items: center;
   line-height: 18px;
   text-decoration: none;
+
+  &:hover .logo-dev__image {
+    color: var(--color-darkblue);
+  }
+
+  &:active .logo-dev__image {
+    color: var(--color-darkblue-30);
+  }
 }
 
 .logo-dev__image {
+  --color-logo: currentColor;
   margin-left: 15px;
+  color: var(--color-pink);
+  transition: inherit;
 }

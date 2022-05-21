@@ -1,3 +1,5 @@
-<a class="logo {{ mix }}" href="index.html" {{ 'aria-current="page"' if page == 'index' }}>
-  <img class="logo__image" src="img/logo-pink.svg" width="74" height="23" alt="Логотип Pink.">
+<a class="logo {{ mix }}" href="index.html" {{ 'aria-current="page"' if page == 'index' }} aria-label="На главную.">
+  <svg class="logo__image" role="img" aria-label="Логотип Pink." width="147" height="40">
+    <use xlink:href="img/logo-pink.svg#logo"/>
+  </svg>
 </a>

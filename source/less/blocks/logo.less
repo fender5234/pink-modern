@@ -1,6 +1,28 @@
+.logo {
+  --color-text: currentColor;
+
+  &:hover:not(:active) {
+    color: var(--color-pink);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
 .logo__image {
-  @media @tablet-desktop {
-    width: 145px; // TEMP
-    height: 40px; // TEMP
+  display: block;
+  transition: inherit;
+
+  @media @mobile {
+    --visibility-stars: none;
+    width: var(--logo-width, 147px);
+    height: var(--logo-height, 40px);
+  }
+
+  @media @tablet {
+    --visibility-glasses: block;
+    --visibility-stars: none;
+    --translate-text-x: -1px;
   }
 }

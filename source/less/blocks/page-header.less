@@ -48,9 +48,19 @@
 }
 
 .page-header__logo {
+  --color-glasses: currentColor;
+  --color-glasses-stars: var(--color-pink);
   position: relative;
   z-index: 1;
   display: block;
+
+  @media @mobile {
+    --visibility-glasses: none;
+    --translate-text-x: -72px;
+    --translate-text-y: -17px;
+    --logo-width: 75px;
+    --logo-height: 23px;
+  }
 }
 
 .page-header__toggler {

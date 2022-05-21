@@ -21,7 +21,10 @@ module.exports = () => ({
         ver: IS_DEV ? `?${Date.now()}` : null
       }));
     })(),
-    require('htmlnano')({ collapseWhitespace: 'aggressive' }),
+    require('htmlnano')({
+      collapseWhitespace: 'aggressive',
+      minifySvg: false
+    }),
     getPosthtmlW3c({
       exit: !IS_DEV,
       forceOffline: true,

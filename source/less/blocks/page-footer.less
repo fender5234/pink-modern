@@ -19,7 +19,16 @@
 
 .page-footer__logo {
   min-height: 40px;
-  outline: 2px solid var(--color-pink);
+
+  &:hover:not(:active) {
+    --color-glasses-stars: currentColor;
+  }
+
+  @media @mobile {
+    --visibility-glasses: block;
+    --translate-text-x: -1px;
+    justify-self: center;
+  }
 
   @media @tablet-desktop {
     align-self: start;
