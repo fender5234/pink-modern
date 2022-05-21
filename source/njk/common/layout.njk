@@ -40,30 +40,10 @@
 
     {% if IS_DEV %}
       <script>
-        {% if page === 'success' %}
-          {% set selector = '#success' %}
-        {% elif page === 'error' %}
-          {% set selector = '#error' %}
-        {% else %}
-          {% set selector = '.viewport--page' %}
-        {% endif %}
-
-        document.querySelectorAll('h1, h2, h3, p, b, a, button, label, legend').forEach((element) => {
-          element.spellcheck = false;
-        });
-
-        document.addEventListener('keydown', (evt) => {
-          if (evt.key.toLowerCase() === 'e') {
-            document.body.contentEditable = document.body.contentEditable !== 'true';
-          }
-        });
-
-        window.pinegladePP = {
-          breakpoints: [320, 660, 980],
-          selector: '{{ selector }}'
-        };
+        window.page = '{{ page }}';
       </script>
-      <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>
+      <script src="js/dev.js" type="module"></script>
+      <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js" defer></script>
     {% endif %}
     <script src="js/script.js" type="module"></script>
   </body>
