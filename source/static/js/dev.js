@@ -4,17 +4,10 @@ const Breakpoint = {
   TABLET: 660,
   DESKTOP: 980
 };
-let selector = '.viewport--page';
-
-if (window.page === 'success') {
-  selector = '#success';
-} else if (window.page === 'error') {
-  selector = '#error';
-}
 
 window.pinegladePP = {
   breakpoints: Object.values(Breakpoint),
-  selector
+  selector: '.viewport--page'
 };
 
 // Делаем редактируемым контент по нажатию E

@@ -12,14 +12,25 @@
   &:target {
     display: flex;
   }
+
+  &:not(&--page) {
+    @media @tablet-desktop {
+      padding: 0 100px;
+    }
+  }
 }
 
 .viewport__modal {
   position: relative;
   box-sizing: border-box;
   min-width: 320px;
+  max-width: 460px;
   margin: auto;
   animation: backInLeft 0.3s ease-in-out;
+
+  @media @no-sm {
+    max-width: 780px;
+  }
 
   &--test {
     margin-top: 0;
