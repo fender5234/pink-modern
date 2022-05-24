@@ -28,6 +28,6 @@
     src="{{ picture.image }}.{{ picture.ext }}"
     srcset="{{ picture.image }}@2x.{{ picture.ext }} 2x"
     alt="{{ picture.alt }}."
-    loading="lazy"
+    {{ 'loading="lazy"' if not picture.loadImmediately }}
   />
 </picture>
