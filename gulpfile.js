@@ -69,6 +69,7 @@ export const buildStyles = () => src('source/less/*.less', { sourcemaps: IS_DEV 
     autoprefixer(),
     cssnano({ preset: ['default', { cssDeclarationSorter: false }] })
   ]))
+  .pipe(rename({ suffix: '.min' }))
   .pipe(dest('build/css', { sourcemaps: '.' }));
 
 export const testStyles = () => src('source/less/**/*.less')

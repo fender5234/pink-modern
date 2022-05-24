@@ -32,9 +32,21 @@
 }
 
 .retina-bg(@bg, @ext: 'jpg') {
-  background-image: url("../img/@{bg}.@{ext}");
+  @supports not (background-image: url("../img/@{bg}.webp")) {
+    background-image: url("../img/@{bg}.@{ext}");
+  }
+
+  @supports (background-image: url("../img/@{bg}.webp")) {
+    background-image: url("../img/@{bg}.webp");
+  }
 
   @media @retina {
-    background-image: url("../img/@{bg}@2x.@{ext}");
+    @supports not (background-image: url("../img/@{bg}@2x.webp")) {
+      background-image: url("../img/@{bg}@2x.@{ext}");
+    }
+
+    @supports (background-image: url("../img/@{bg}@2x.webp")) {
+      background-image: url("../img/@{bg}@2x.webp");
+    }
   }
 }

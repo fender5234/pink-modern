@@ -6,14 +6,16 @@
   {% endif %}
 
   {% set picture = {
-    mix: 'picture--fullwidth photo__picture',
+    mix: 'picture--fullwidth',
     image: photo.image,
     ext: photo.ext,
     xs: photo.xs,
     sm: photo.sm,
     alt: photo.heading
   } %}
-  {% include 'blocks/picture.njk' %}
+  <a class="photo__picture" href="{{ photo.image }}-desktop@2x.{{ photo.ext }}">
+    {% include 'blocks/picture.njk' %}
+  </a>
 
   <blockquote class="photo__quote">
     <p class="photo__cite">
