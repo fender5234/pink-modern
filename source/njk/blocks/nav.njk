@@ -3,11 +3,11 @@
     {% for link in config.menu.list %}
       <li class="nav__item">
         {% if link.page == page %}
-          <a class="nav__link nav__link--current" href="{{ link.href }}" aria-current="page">
+          <a class="nav__link nav__link--current" href="{{ link.href }}" aria-current="page" data-route>
             {{ link.title }}
           </a>
         {% else %}
-          <a class="nav__link" href="{{ link.href }}">
+          <a class="nav__link" href="{{ link.href }}" data-route>
             {{ link.title }}
           </a>
         {% endif %}
