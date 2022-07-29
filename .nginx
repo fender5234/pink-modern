@@ -8,8 +8,8 @@ server {
 server {
   listen 80;
   server_name www.pink.local pink.local;
-  access_log /home/efiand/projects/pink-modern/logs/access.log;
-  error_log /home/efiand/projects/pink-modern/logs/error.log;
+  access_log /home/efiand/projects/pink/logs/access.log;
+  error_log /home/efiand/projects/pink/logs/error.log;
 
   # Без www
   if ($host ~* www\.(.*)) {
@@ -23,7 +23,7 @@ server {
   }
 
   location / {
-    root /home/efiand/projects/pink-modern/build;
+    root /home/efiand/projects/pink/build;
     index index.html;
     error_page 404 404.html;
   }
