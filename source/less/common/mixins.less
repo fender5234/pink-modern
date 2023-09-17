@@ -23,7 +23,7 @@
   }
 }
 
-.auto-areas(@limit: 6, @i: 1) when (@i <= @limit) {
+.auto-areas(@limit: 6, @i: 1) when (@i <=@limit) {
   &:nth-child(@{i}) {
     grid-area: ~"area-@{i}";
   }
@@ -31,22 +31,10 @@
   .auto-areas(@limit, @i + 1);
 }
 
-.retina-bg(@bg, @ext: 'jpg') {
-  @supports not (background-image: url("../img/@{bg}.webp")) {
-    background-image: url("../img/@{bg}.@{ext}");
-  }
-
-  @supports (background-image: url("../img/@{bg}.webp")) {
-    background-image: url("../img/@{bg}.webp");
-  }
+.retina-bg(@bg, @ext: 'webp') {
+  background-image: url("../img/@{bg}.@{ext}");
 
   @media @retina {
-    @supports not (background-image: url("../img/@{bg}@2x.webp")) {
-      background-image: url("../img/@{bg}@2x.@{ext}");
-    }
-
-    @supports (background-image: url("../img/@{bg}@2x.webp")) {
-      background-image: url("../img/@{bg}@2x.webp");
-    }
+    background-image: url("../img/@{bg}@2x.@{ext}");
   }
 }

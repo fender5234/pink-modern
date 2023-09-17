@@ -34,8 +34,6 @@ export default class Map {
         }, {
           icon: L.icon({
             iconUrl: 'img/icon-map-marker.svg',
-            iconRetinaUrl: 'img/icon-map-marker.svg',
-            shadowUrl: 'img/icon-map-marker.svg',
             iconSize: [SIZE, SIZE],
             iconAnchor: [ANCHOR, ANCHOR]
           })

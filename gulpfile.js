@@ -101,7 +101,6 @@ export const optimizeImages = () => src('source/img/**/*.{svg,png,jpg}')
     pngquant(),
     mozjpeg({ progressive: true, quality: 75 })
   ])))
-  .pipe(dest('build/img'))
   .pipe(webp({ quality: 80 }))
   .pipe(dest('build/img'));
 

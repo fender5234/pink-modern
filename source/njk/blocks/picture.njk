@@ -1,20 +1,5 @@
 <picture class="picture {{ picture.mix }}">
   <source
-    type="image/webp"
-    media="(min-width: {{ picture.sm or 980 }}px)"
-    srcset="{{ picture.image }}-desktop.webp 1x, {{ picture.image }}-desktop@2x.webp 2x"
-  />
-  <source
-    type="image/webp"
-    media="(min-width: {{ picture.xs or 660 }}px)"
-    srcset="{{ picture.image }}-tablet.webp 1x, {{ picture.image }}-tablet@2x.webp 2x"
-  />
-  <source
-    type="image/webp"
-    srcset="{{ picture.image }}.webp 1x, {{ picture.image }}@2x.webp 2x"
-  />
-
-  <source
     media="(min-width: {{ picture.sm or 980 }}px)"
     srcset="{{ picture.image }}-desktop.{{ picture.ext }} 1x, {{ picture.image }}-desktop@2x.{{ picture.ext }} 2x"
   />
